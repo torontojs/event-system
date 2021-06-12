@@ -1,28 +1,29 @@
 import React from "react";
+import styles from "./EventList.module.css";
 
 interface EventProps {
   eventTitle: string;
   eventDescription: string;
-  eventDate: number;
-  eventTime: number;
+  eventStartDate: number;
+  eventEndDate: number;
   eventRsvp?: boolean;
 }
 
 const EventList: React.FC<EventProps> = ({
   eventTitle,
   eventDescription,
-  eventTime,
-  eventDate,
+  eventStartDate,
+  eventEndDate,
   eventRsvp,
 }) => {
   return (
-    <aside>
+    <div className={styles["event_container"]}>
       <h2>{eventTitle}</h2>
-      <h3>{eventTime}</h3>
-      <h3>{eventDate}</h3>
+      <h3>{eventStartDate}</h3>
+      <h3>{eventEndDate}</h3>
       <p>{eventDescription}</p>
       <button className="rsvp">RSVP{eventRsvp}</button>
-    </aside>
+    </div>
   );
 };
 

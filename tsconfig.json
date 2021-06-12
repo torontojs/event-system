@@ -68,7 +68,8 @@
     /* Advanced Options */
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
-    "jsx": "react"
+    "jsx": "react",
     /*This will allow a compiler to work with JSX components as React components.*/
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   }
 }
