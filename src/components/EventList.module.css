@@ -1,5 +1,25 @@
 .event_container {
   width: 40rem;
+  overflow: hidden;
+  box-shadow: 0 0 15px -5px;
+  height: 15rem;
   padding: 10px;
-  margin: 15px;
+  margin: 30px;
+  border-radius: 25px;
+  transition: 0.3s;
+  animation: ease-in;
+}
+.event_container:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15 0;
+}
+.details_container {
+  height: 200px;
+  margin: 1rem;
+  margin-top: 0.5rem;
+}
+.rsvp {
+  align-self: right;
+  margin: 20px;
+  margin-left: 550px;
 }
