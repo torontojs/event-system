@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./EventList.module.css";
 
-interface EventProps {
+interface IEventProps {
   eventTitle: string;
   eventDescription: string;
   eventStartDate: number;
@@ -9,7 +9,7 @@ interface EventProps {
   eventRsvp?: boolean;
 }
 
-const EventList: React.FC<EventProps> = ({
+const EventList: React.FC<IEventProps> = ({
   eventTitle,
   eventDescription,
   eventStartDate,
@@ -23,7 +23,9 @@ const EventList: React.FC<EventProps> = ({
         <h3>{eventStartDate}</h3>
         <h3>{eventEndDate}</h3>
         <p>{eventDescription}</p>
-        <button className={styles["rsvp"]}>RSVP{eventRsvp}</button>
+        <div className="btn">
+          <button className={styles["rsvp"]}>RSVP{eventRsvp}</button>
+        </div>
       </div>
     </div>
   );

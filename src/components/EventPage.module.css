@@ -1,0 +1,31 @@
+.navWrapper {
+  display: flex;
+  width: 70%;
+  margin: 24px auto 16px;
+  justify-content: space-between;
+}
+.rsvp {
+  padding: 5px;
+}
+.btn_share {
+  padding: 5px;
+  margin-left: 93rem;
+}
+.eventDescription {
+  margin: 30px;
+}
+.eventSchedule {
+  margin: 30px;
+}
+.eventHost {
+  margin: 30px;
+}
+.form_container {
+  width: 20rem;
+  overflow: hidden;
+  box-shadow: 0 0 15px -5px;
+  height: 10rem;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 25px;
+}
