@@ -1,6 +1,7 @@
 import React from "react";
 import EventList from "../EventList";
 import EventPage from "../EventPage";
+import Register from "../Register";
 
 export type EventList = {
   eventTitle?: string;
@@ -11,6 +12,11 @@ export type EventList = {
 };
 
 // export type EventPage = {
+//   eventTitle?: string;
+//   eventDescription: string;
+//   eventStartDate: number;
+//   eventEndDate: number;
+//   eventRsvp?: boolean;
 //   eventSchedule: string;
 //   eventHost: string;
 // };
