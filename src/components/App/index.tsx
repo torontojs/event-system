@@ -3,12 +3,17 @@ import EventList from "../EventList";
 import EventPage from "../EventPage";
 
 export type EventList = {
-  eventTitle: string;
+  eventTitle?: string;
   eventDescription: string;
   eventStartDate: number;
   eventEndDate: number;
-  eventRsvp: boolean;
+  eventRsvp?: boolean;
 };
+
+// export type EventPage = {
+//   eventSchedule: string;
+//   eventHost: string;
+// };
 
 const App: React.FC = () => {
   return (
@@ -40,8 +45,9 @@ const App: React.FC = () => {
         eventEndDate={new Date().getTime()}
         eventRsvp={undefined}
       />
+
       <EventPage
-        eventTitle="Event3"
+        eventTitle="Event2"
         eventStartDate={new Date().getTime()}
         eventDescription={
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
@@ -51,7 +57,7 @@ const App: React.FC = () => {
         shareEvent=""
         eventSchedule="Event start date: 6:30
         Workshop code-along: 7:00
-        Q&A or exeended chit chat:8:30
+        Q&A or extended chit chat:8:30
         Event ends:9:00"
         eventHost="Host name: Elon Musk, Host image"
       />

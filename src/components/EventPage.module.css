@@ -1,31 +1,45 @@
 .navWrapper {
   display: flex;
-  width: 70%;
+  width: 100%;
   margin: 24px auto 16px;
   justify-content: space-between;
+  box-shadow: 0 6px 0 -5px;
+  padding-bottom: 10px;
 }
-.rsvp {
+.submit {
   padding: 5px;
+  margin-left: 8rem;
 }
 .btn_share {
-  padding: 5px;
-  margin-left: 93rem;
+  margin-left: 17rem;
 }
 .eventDescription {
   margin: 30px;
 }
-.eventSchedule {
+.eventSchedule_contaner {
   margin: 30px;
+  width: 15rem;
 }
-.eventHost {
+.eventHost_container {
   margin: 30px;
+  width: 20rem;
+  height: 15rem;
+  border-radius: 25px;
+  box-shadow: 0 0 9px -5px;
 }
 .form_container {
   width: 20rem;
   overflow: hidden;
   box-shadow: 0 0 15px -5px;
-  height: 10rem;
+  height: 13rem;
   padding: 10px;
   margin: 30px;
   border-radius: 25px;
+}
+input {
+  width: 19.5rem;
+  height: 20px;
+}
+.time_container {
+  margin: 30px;
 }
