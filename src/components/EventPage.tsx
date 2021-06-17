@@ -16,6 +16,7 @@ interface EventPageProps {
 interface LinkProps {
   to: string;
 }
+
 const Link: React.FC<LinkProps> = (props) => (
   <a
     href={props.to}
@@ -47,7 +48,7 @@ const EventPage: React.FC<EventPageProps> = ({
             <h3>{eventEndDate}</h3>
           </div>
           <div className={styles["link_container"]}>
-            <Link to={"/description"}>Description</Link>
+            <Link to={"description"}>Description</Link>
             <Link to={"/schedule"}>Schedule</Link>
             <Link to={"/host"}>Host</Link>
           </div>
