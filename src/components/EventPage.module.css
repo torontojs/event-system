@@ -10,6 +10,15 @@
 .btn_share {
   margin-left: 17rem;
 }
+.link_container {
+  margin-top: 9.6rem;
+}
+a {
+  padding: 2rem;
+}
+.left_container {
+  width: 30rem;
+}
 .eventDescription {
   margin: 30px;
 }

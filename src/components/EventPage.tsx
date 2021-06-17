@@ -13,6 +13,20 @@ interface EventPageProps {
   eventHost: string;
 }
 
+interface LinkProps {
+  to: string;
+}
+const Link: React.FC<LinkProps> = (props) => (
+  <a
+    href={props.to}
+    onClick={(e) => {
+      e.preventDefault();
+    }}
+  >
+    {props.children}
+  </a>
+);
+
 const EventPage: React.FC<EventPageProps> = ({
   eventTitle,
   eventDescription,
@@ -26,15 +40,19 @@ const EventPage: React.FC<EventPageProps> = ({
   return (
     <div>
       <div className={styles["navWrapper"]}>
-        <div className={styles["time_container"]}>
-          <h2>{eventTitle}</h2>
-          <h3>{eventStartDate}</h3>
-          <h3>{eventEndDate}</h3>
+        <div className={styles["left_container"]}>
+          <div className={styles["time_container"]}>
+            <h2>{eventTitle}</h2>
+            <h3>{eventStartDate}</h3>
+            <h3>{eventEndDate}</h3>
+          </div>
+          <div className={styles["link_container"]}>
+            <Link to={"/description"}>Description</Link>
+            <Link to={"/schedule"}>Schedule</Link>
+            <Link to={"/host"}>Host</Link>
+          </div>
         </div>
 
-        {/* <Link href="/description">Description</Link>
-        <Link href="/schedule">Schedule</Link>
-        <Link href="/host">Host</Link> */}
         <div className={styles["form_content_container"]}>
           <div className={styles["form_container"]}>
             <Register />
