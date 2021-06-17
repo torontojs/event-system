@@ -1,0 +1,10 @@
+.confirmation_container {
+  margin: 50rempx;
+  width: 15rem;
+  border-radius: 25px;
+  box-shadow: 0 0 9px -5px;
+  padding: 10px;
+}
+.ok {
+  margin: 5rem;
+}

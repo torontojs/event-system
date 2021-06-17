@@ -31,6 +31,7 @@ const EventPage: React.FC<EventPageProps> = ({
           <h3>{eventStartDate}</h3>
           <h3>{eventEndDate}</h3>
         </div>
+
         {/* <Link href="/description">Description</Link>
         <Link href="/schedule">Schedule</Link>
         <Link href="/host">Host</Link> */}

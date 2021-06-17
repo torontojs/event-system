@@ -23,6 +23,7 @@
   height: 15rem;
   border-radius: 25px;
   box-shadow: 0 0 9px -5px;
+  padding: 10px;
 }
 
 input {

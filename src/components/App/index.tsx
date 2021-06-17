@@ -2,6 +2,7 @@ import React from "react";
 import EventList from "../EventList";
 import EventPage from "../EventPage";
 import Register from "../Register";
+import Confirmation from "../Confirmation";
 
 export type EventList = {
   eventTitle?: string;
@@ -66,6 +67,12 @@ const App: React.FC = () => {
         Q&A or extended chit chat:8:30
         Event ends:9:00"
         eventHost="Host name: Elon Musk, Host image"
+      />
+
+      <Confirmation
+        eventConfirmation="Confirmation message of RSVP received
+      "
+        eventOk=""
       />
     </div>
   );
