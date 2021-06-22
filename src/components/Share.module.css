@@ -1,0 +1,14 @@
+.share_container {
+  margin-left: 50rem;
+  width: 15rem;
+  height: 20rem;
+  border-radius: 25px;
+  box-shadow: 0 0 9px -5px;
+  padding: 10px;
+  margin-top: 10rem;
+}
+.social_container {
+  margin: 5rem;
+  height: 15rem;
+  width: 10rem;
+}

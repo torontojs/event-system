@@ -2,13 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import EventList from "../EventList";
 import EventPage from "../EventPage";
-import Register from "../Register";
 import Confirmation from "../Confirmation";
+import Share from "../Share";
 
 const App: React.FC = () => {
   return (
     <div>
-      <Router>
+      {/* <Router>
         <div>
           <Switch>
             <Route path="/eventPage">
@@ -48,7 +48,7 @@ const App: React.FC = () => {
             </Route>
           </Switch>
         </div>
-      </Router>
+      </Router> */}
 
       <EventList
         eventTitle="Event1"
@@ -98,6 +98,13 @@ const App: React.FC = () => {
         eventConfirmation="Confirmation message of RSVP received
       "
         eventOk=""
+      />
+
+      <Share
+        facebook="string"
+        twitter="http://www.twitter.com"
+        linkedIn="string"
+        copy="string"
       />
     </div>
   );

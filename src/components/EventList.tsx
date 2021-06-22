@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./EventList.module.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 interface IEventProps {
   eventTitle: string;
@@ -26,7 +26,7 @@ const EventList: React.FC<IEventProps> = ({
         <p>{eventDescription}</p>
         <div className="btn">
           <button className={styles["rsvp"]}>
-            <Link to="EventPage"></Link>
+            {/* <Link to="EventPage"></Link> */}
             RSVP{eventRsvp}
           </button>
         </div>

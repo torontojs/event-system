@@ -17,6 +17,7 @@ export default class Register extends React.Component<{}, Istate> {
       currentFullName: "",
       currentEmailAddress: "",
       fullName: [...this.state.fullName, this.state.currentFullName],
+      emailAddress: [...this.state.emailAddress, this.state.currentEmailAddress]
     });
   }
 
