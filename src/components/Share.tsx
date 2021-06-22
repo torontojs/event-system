@@ -5,6 +5,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
+import { Link } from "react-router-dom";
 
 interface IShare {
   facebook: string;
@@ -16,9 +17,12 @@ interface IShare {
 const Share: React.FC<IShare> = ({ facebook, twitter, linkedIn, copy }) => {
   return (
     <div className={styles["share_container"]}>
-      <ClearIcon className="cross">
-        <span className={styles["cancel"]}></span>
-      </ClearIcon>
+      <Link to="/eventPage">
+        <ClearIcon className={styles["cross"]}>
+          <span className={styles["cancel"]}></span>
+        </ClearIcon>
+      </Link>
+
       <h3>Share this event!</h3>
       <div className={styles["social_container"]}>
         <div className={styles["facebook_container"]}>

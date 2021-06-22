@@ -45,12 +45,8 @@ const App: React.FC = () => {
                 eventEndDate={new Date().getTime()}
                 eventRsvp={undefined}
               />
-              <Confirmation
-                eventConfirmation="Confirmation message of RSVP received
-      "
-                eventOk=""
-              />
-
+            </Route>
+            <Route path="/share">
               <Share facebook="" twitter="" linkedIn="" copy="" />
             </Route>
           </Switch>

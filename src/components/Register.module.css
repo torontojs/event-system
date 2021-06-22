@@ -10,4 +10,10 @@
 .submit {
   padding: 5px;
   margin-left: 8rem;
+  transition: 0.3s;
+  animation: ease-in;
+}
+.submit:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15 0;
 }

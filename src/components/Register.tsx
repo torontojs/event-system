@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Register.module.css";
+import { Link } from "react-router-dom";
 
 export default class Register extends React.Component<{}, Istate> {
   constructor(props: {}) {
@@ -17,7 +18,10 @@ export default class Register extends React.Component<{}, Istate> {
       currentFullName: "",
       currentEmailAddress: "",
       fullName: [...this.state.fullName, this.state.currentFullName],
-      emailAddress: [...this.state.emailAddress, this.state.currentEmailAddress]
+      emailAddress: [
+        ...this.state.emailAddress,
+        this.state.currentEmailAddress,
+      ],
     });
   }
 
@@ -53,7 +57,10 @@ export default class Register extends React.Component<{}, Istate> {
             />
           </div>
           <br />
-          <button className={styles["submit"]}>RSVP{}</button>
+
+          <Link to="/confirmation">
+            <button className={styles["submit"]}>RSVP{}</button>
+          </Link>
         </form>
       </div>
     );

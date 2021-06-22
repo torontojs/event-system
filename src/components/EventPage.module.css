@@ -9,7 +9,14 @@
 
 .btn_share {
   margin-left: 17rem;
+  transition: 0.3s;
+  animation: ease-in;
 }
+.btn_share:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15 0;
+}
+
 .link_container {
   margin-top: 9.6rem;
 }

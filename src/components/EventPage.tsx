@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./EventPage.module.css";
 import Register from "./Register";
+import { Link } from "react-router-dom";
 
 interface EventPageProps {
   eventTitle: string;
@@ -12,21 +13,6 @@ interface EventPageProps {
   eventSchedule: string;
   eventHost: string;
 }
-
-interface LinkProps {
-  to: string;
-}
-
-const Link: React.FC<LinkProps> = (props) => (
-  <a
-    href={props.to}
-    onClick={(e) => {
-      e.preventDefault();
-    }}
-  >
-    {props.children}
-  </a>
-);
 
 const EventPage: React.FC<EventPageProps> = ({
   eventTitle,
@@ -47,22 +33,18 @@ const EventPage: React.FC<EventPageProps> = ({
             <h3>{eventStartDate}</h3>
             <h3>{eventEndDate}</h3>
           </div>
-          <div className={styles["link_container"]}>
-            <Link to={"description"}>Description</Link>
-            <Link to={"/schedule"}>Schedule</Link>
-            <Link to={"/host"}>Host</Link>
-          </div>
         </div>
 
         <div className={styles["form_content_container"]}>
           <div className={styles["form_container"]}>
             <Register />
           </div>
-
           <div className={styles["btn_share"]}>
-            <button className={styles["sharevent"]}>
-              Share Event{shareEvent}
-            </button>
+            <Link to="/share">
+              <button className={styles["sharevent"]}>
+                Share Event{shareEvent}
+              </button>
+            </Link>
           </div>
         </div>
       </div>
