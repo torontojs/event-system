@@ -8,7 +8,7 @@ import Share from "../Share";
 const App: React.FC = () => {
   return (
     <div>
-      {/* <Router>
+      <Router>
         <div>
           <Switch>
             <Route path="/eventPage">
@@ -45,67 +45,17 @@ const App: React.FC = () => {
                 eventEndDate={new Date().getTime()}
                 eventRsvp={undefined}
               />
+              <Confirmation
+                eventConfirmation="Confirmation message of RSVP received
+      "
+                eventOk=""
+              />
+
+              <Share facebook="" twitter="" linkedIn="" copy="" />
             </Route>
           </Switch>
         </div>
-      </Router> */}
-
-      <EventList
-        eventTitle="Event1"
-        eventStartDate={new Date().getTime()}
-        eventDescription={
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-        }
-        eventEndDate={new Date().getTime()}
-        eventRsvp={undefined}
-      />
-      <EventList
-        eventTitle="Event2"
-        eventStartDate={new Date().getTime()}
-        eventDescription={
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-        }
-        eventEndDate={new Date().getTime()}
-        eventRsvp={undefined}
-      />
-      <EventList
-        eventTitle="Event3"
-        eventStartDate={new Date().getTime()}
-        eventDescription={
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-        }
-        eventEndDate={new Date().getTime()}
-        eventRsvp={undefined}
-      />
-
-      <EventPage
-        eventTitle="Event2"
-        eventStartDate={new Date().getTime()}
-        eventDescription={
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-        }
-        eventEndDate={new Date().getTime()}
-        eventRsvp={undefined}
-        shareEvent=""
-        eventSchedule="Event start date: 6:30
-        Workshop code-along: 7:00
-        Q&A or extended chit chat:8:30
-        Event ends:9:00"
-        eventHost="Host name: Elon Musk, Host image"
-      />
-
-      <Confirmation
-        eventConfirmation="Confirmation message of RSVP received
-      "
-        eventOk=""
-      />
-
-      <Share
-        facebook="string"
-        twitter="http://www.twitter.com"
-        linkedIn="string"
-        copy="string"
-      />
+      </Router>
     </div>
   );
 };

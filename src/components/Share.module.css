@@ -1,14 +1,32 @@
 .share_container {
   margin-left: 50rem;
   width: 15rem;
-  height: 20rem;
+  height: 25rem;
   border-radius: 25px;
   box-shadow: 0 0 9px -5px;
-  padding: 10px;
+  padding: 25px 50px;
   margin-top: 10rem;
 }
 .social_container {
-  margin: 5rem;
-  height: 15rem;
+  height: 24rem;
   width: 10rem;
+}
+
+a.facebook {
+  color: #4968ad;
+}
+a.twitter {
+  color: #49a1eb;
+}
+
+a.linkedIn {
+  color: #0e76a8;
+}
+a.copy {
+  color: #86888a;
+}
+.h4 {
+  margin-left: 2rem;
+  display: -webkit-inline-box;
+  padding-bottom: 1rem;
 }

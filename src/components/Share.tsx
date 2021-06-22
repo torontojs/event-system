@@ -21,26 +21,44 @@ const Share: React.FC<IShare> = ({ facebook, twitter, linkedIn, copy }) => {
       </ClearIcon>
       <h3>Share this event!</h3>
       <div className={styles["social_container"]}>
-        <FacebookIcon>
-          <h3>FaceBook</h3>
-          {facebook}
-        </FacebookIcon>
-
-        <TwitterIcon>
-          <a href={`http://www.twitter.com/`}>
-            <h3>Twitter</h3>
+        <div className={styles["facebook_container"]}>
+          <a
+            href="https://www.facebook.com/login/web/"
+            target="blank"
+            className={styles["facebook"]}
+          >
+            <FacebookIcon />
+            <h4 className={styles["h4"]}>FaceBook{facebook}</h4>
           </a>
-          {twitter}
-        </TwitterIcon>
-        <LinkedInIcon>
-          <h3>LinkedIn</h3>
-          {linkedIn}
-        </LinkedInIcon>
+        </div>
 
-        <FileCopyIcon>
-          <h3>Copy Link</h3>
-          {copy}
-        </FileCopyIcon>
+        <div className={styles["twitter_container"]}>
+          <a
+            href="http://www.twitter.com/"
+            target="blank"
+            className={styles["twitter"]}
+          >
+            <TwitterIcon />
+            <h4 className={styles["h4"]}>Twitter{twitter}</h4>
+          </a>
+        </div>
+
+        <div className={styles["linkedIn_container"]}>
+          <a
+            href="https://ca.linkedin.com/"
+            target="blank"
+            className={styles["linkedIn"]}
+          >
+            <LinkedInIcon />
+            <h4 className={styles["h4"]}>LinkedIn{linkedIn}</h4>
+          </a>
+        </div>
+        <div className={styles["cop_container"]}>
+          <a href="" className={styles["copy"]}>
+            <FileCopyIcon />
+            <h4 className={styles["h4"]}>Copy Link{copy}</h4>
+          </a>
+        </div>
       </div>
     </div>
   );
