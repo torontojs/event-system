@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./EventPage.module.css";
-import LinkPage from "./LinkPage";
+import LinkSection from "./LinkSection";
 import { Link } from "react-router-dom";
 
 interface EventLinkProps {
@@ -12,6 +12,7 @@ interface EventLinkProps {
   shareEvent: string;
   eventSchedule: string;
   eventHost: string;
+  eventChange: string;
 }
 
 const EventLink: React.FC<EventLinkProps> = ({
@@ -23,6 +24,7 @@ const EventLink: React.FC<EventLinkProps> = ({
   shareEvent,
   eventSchedule,
   eventHost,
+  eventChange,
 }) => {
   return (
     <div>
@@ -37,7 +39,7 @@ const EventLink: React.FC<EventLinkProps> = ({
 
         <div className={styles["form_content_container"]}>
           <div className={styles["form_container"]}>
-            <LinkPage />
+            <LinkSection eventChange="" />
           </div>
           <div className={styles["btn_share"]}>
             <Link to="/share">

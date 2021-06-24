@@ -65,6 +65,7 @@ const App: React.FC = () => {
             Q&A or extended chit chat:8:30
             Event ends:9:00"
                 eventHost="Host name: Elon Musk, Host image"
+                eventChange=""
               />
             </Route>
           </Switch>
