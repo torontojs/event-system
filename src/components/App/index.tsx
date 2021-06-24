@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import EventList from "../EventList";
 import EventPage from "../EventPage";
 import Confirmation from "../Confirmation";
+import Edit from "../Edit";
 import Share from "../Share";
 import EventLink from "../EventLink";
 
@@ -67,6 +68,9 @@ const App: React.FC = () => {
                 eventHost="Host name: Elon Musk, Host image"
                 eventChange=""
               />
+            </Route>
+            <Route path="/edit">
+              <Edit eventchange="" eventUpdate="" />
             </Route>
           </Switch>
         </div>

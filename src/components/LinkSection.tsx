@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./LinkSection.module.css";
+import { Link } from "react-router-dom";
 
 interface LinkSectionProps {
   eventStartDate?: number;
@@ -29,9 +30,11 @@ const LinkSection: React.FC<LinkSectionProps> = ({
         </div>
         <button className={styles["going"]}>I'm Going!</button>
         <br />
-        <button className={styles["change"]}>
-          Change your RSVP{eventChange}
-        </button>
+        <Link to="/Edit">
+          <button className={styles["change"]}>
+            Change your RSVP{eventChange}
+          </button>
+        </Link>
       </form>
     </div>
   );
