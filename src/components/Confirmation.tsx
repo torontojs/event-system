@@ -17,7 +17,7 @@ const Confirmation: React.FC<IConfirmation> = ({
         <p>{eventConfirmation}</p>
 
         <div className="btn">
-          <Link to="/eventPage">
+          <Link to="/eventLink">
             <button className={styles["ok"]}>Got It!{eventOk}</button>
           </Link>
         </div>
