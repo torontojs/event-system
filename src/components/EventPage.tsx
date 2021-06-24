@@ -19,7 +19,6 @@ const EventPage: React.FC<EventPageProps> = ({
   eventDescription,
   eventStartDate,
   eventEndDate,
-  eventRsvp,
   shareEvent,
   eventSchedule,
   eventHost,
@@ -51,12 +50,12 @@ const EventPage: React.FC<EventPageProps> = ({
 
       <div className={styles["eventDescription"]}>
         <h2>Description</h2>
-        <p>{eventDescription}</p>
+        <div>{eventDescription}</div>
       </div>
 
       <div className={styles["eventSchedule_contaner"]}>
         <h2>Schedule</h2>
-        <p>{eventSchedule}</p>
+        <div>{eventSchedule}</div>
       </div>
 
       <div className={styles["eventHost_container"]}>

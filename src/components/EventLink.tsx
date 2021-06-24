@@ -20,7 +20,6 @@ const EventLink: React.FC<EventLinkProps> = ({
   eventDescription,
   eventStartDate,
   eventEndDate,
-  eventRsvp,
   shareEvent,
   eventSchedule,
   eventHost,
@@ -53,12 +52,12 @@ const EventLink: React.FC<EventLinkProps> = ({
 
       <div className={styles["eventDescription"]}>
         <h2>Description</h2>
-        <p>{eventDescription}</p>
+        <div>{eventDescription}</div>
       </div>
 
       <div className={styles["eventSchedule_contaner"]}>
         <h2>Schedule</h2>
-        <p>{eventSchedule}</p>
+        <div>{eventSchedule}</div>
       </div>
 
       <div className={styles["eventHost_container"]}>

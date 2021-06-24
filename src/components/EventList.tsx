@@ -18,18 +18,21 @@ const EventList: React.FC<IEventProps> = ({
   eventRsvp,
 }) => {
   return (
-    <div className={styles["event_container"]}>
-      <div className={styles["details_container"]}>
+    <div>
+      <div className={styles["event_container"]}>
         <h2>{eventTitle}</h2>
-        <h3>{eventStartDate}</h3>
-        <h3>{eventEndDate}</h3>
-        <p>{eventDescription}</p>
+        <div className={styles["details_container"]}>
+          <h3>{eventStartDate}</h3>
+          <h3>{eventEndDate}</h3>
+        </div>
+        <div className={styles["block"]}>{eventDescription}</div>
         <div className="btn">
           <Link to="/eventPage">
             <button className={styles["rsvp"]}>RSVP{eventRsvp}</button>
           </Link>
         </div>
       </div>
+      <button className={styles["more"]}>Load More</button>
     </div>
   );
 };
