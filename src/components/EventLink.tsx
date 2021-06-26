@@ -41,7 +41,7 @@ const EventLink: React.FC<EventLinkProps> = ({
             <LinkSection eventChange="" />
           </div>
           <div className={styles["btn_share"]}>
-            <Link to="/share">
+            <Link to="/shareLink">
               <button className={styles["sharevent"]}>
                 Share Event{shareEvent}
               </button>

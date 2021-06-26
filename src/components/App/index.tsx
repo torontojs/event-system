@@ -5,6 +5,7 @@ import EventPage from "../EventPage";
 import Confirmation from "../Confirmation";
 import Edit from "../Edit";
 import Share from "../Share";
+import ShareLink from "../ShareLink";
 import EventLink from "../EventLink";
 
 const App: React.FC = () => {
@@ -50,6 +51,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/share">
               <Share facebook="" twitter="" linkedIn="" copy="" />
+            </Route>
+            <Route path="/shareLink">
+              <ShareLink facebook="" twitter="" linkedIn="" copy="" />
             </Route>
             <Route path="/eventLink">
               <EventLink
