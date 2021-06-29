@@ -5,6 +5,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
+
 import { Link } from "react-router-dom";
 
 interface IShare {
@@ -27,9 +28,9 @@ const Share: React.FC<IShare> = ({ facebook, twitter, linkedIn, copy }) => {
       <div className={styles["social_container"]}>
         <div className={styles["facebook_container"]}>
           <a
-            href="https://www.facebook.com/login/web/"
-            target="blank"
+            href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:9000/eventPage"
             className={styles["facebook"]}
+            target="blank"
           >
             <FacebookIcon />
             <h4 className={styles["h4"]}>FaceBook{facebook}</h4>
@@ -38,7 +39,7 @@ const Share: React.FC<IShare> = ({ facebook, twitter, linkedIn, copy }) => {
 
         <div className={styles["twitter_container"]}>
           <a
-            href="http://www.twitter.com/"
+            href="https://twitter.com/intent/tweet?url=http://localhost:9000/eventPage&text=facebook"
             target="blank"
             className={styles["twitter"]}
           >
@@ -49,7 +50,7 @@ const Share: React.FC<IShare> = ({ facebook, twitter, linkedIn, copy }) => {
 
         <div className={styles["linkedIn_container"]}>
           <a
-            href="https://ca.linkedin.com/"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:9000/eventPage"
             target="blank"
             className={styles["linkedIn"]}
           >

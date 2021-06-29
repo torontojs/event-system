@@ -26,5 +26,5 @@
   box-shadow: 0 0 15 0;
 }
 .block {
-  overflow-wrap: initial;
+  text-align: justify;
 }
