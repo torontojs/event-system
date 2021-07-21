@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./EventPage.module.css";
 import Register from "./Register";
 import { Link } from "react-router-dom";
+import { useResource } from "react-ketting";
 
 interface EventPageProps {
   eventTitle: string;
@@ -14,6 +15,18 @@ interface EventPageProps {
   eventHost: string;
 }
 
+type Event = {
+  name: string;
+  type: string;
+  address: number;
+  start_date: number;
+  end_date?: boolean;
+  description: string;
+  schedule: string;
+  host_name: string;
+  host_picture: string;
+};
+
 const EventPage: React.FC<EventPageProps> = ({
   eventTitle,
   eventDescription,
@@ -23,14 +36,18 @@ const EventPage: React.FC<EventPageProps> = ({
   eventSchedule,
   eventHost,
 }) => {
+  const { loading, error, data } = useResource<Event>("/event/1");
+  if (loading) return <p>Loading...</p>;
+  if (error) return <div className="error">{error.message}</div>;
+
   return (
     <div>
       <div className={styles["navWrapper"]}>
         <div className={styles["left_container"]}>
           <div className={styles["time_container"]}>
-            <h2>{eventTitle}</h2>
-            <h3>{eventStartDate}</h3>
-            <h3>{eventEndDate}</h3>
+            <h2>{data.name}</h2>
+            <h3>{data.start_date}</h3>
+            <h3>{data.end_date}</h3>
           </div>
         </div>
 
@@ -50,17 +67,18 @@ const EventPage: React.FC<EventPageProps> = ({
 
       <div className={styles["eventDescription"]}>
         <h2>Description</h2>
-        <div>{eventDescription}</div>
+        <div>{data.description}</div>
       </div>
 
       <div className={styles["eventSchedule_contaner"]}>
         <h2>Schedule</h2>
-        <div>{eventSchedule}</div>
+        <div>{data.schedule}</div>
       </div>
 
       <div className={styles["eventHost_container"]}>
         <h2>Host</h2>
-        <h2>{eventHost}</h2>
+        <h2>{data.host_name}</h2>
+        <div>{data.host_picture}</div>
       </div>
     </div>
   );
