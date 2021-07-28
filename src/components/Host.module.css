@@ -1,0 +1,14 @@
+.eventHost_container {
+  margin: 30px;
+  width: 20rem;
+  height: 15rem;
+  border-radius: 25px;
+  box-shadow: 0 0 9px -5px;
+  padding: 10px;
+}
+.pic {
+  margin: 3px;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 25px;
+}

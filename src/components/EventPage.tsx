@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./EventPage.module.css";
 import Register from "./Register";
 import Schedule from "./Schedule";
+import Host from "./Host";
 import { Link } from "react-router-dom";
 import { useResource } from "react-ketting";
 
@@ -77,11 +78,7 @@ const EventPage: React.FC<EventPageProps> = ({
         <div>{data.description}</div>
       </div>
       <Schedule eventSchedule="" />
-      <div className={styles["eventHost_container"]}>
-        <h2>Host</h2>
-        <h2>{data.host_name}</h2>
-        <div>{data.host_picture}</div>
-      </div>
+      <Host eventHost="" />
     </div>
   );
 };
