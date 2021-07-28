@@ -25,6 +25,10 @@ type Event = {
   schedule: string;
   host_name: string;
   host_picture: string;
+  start: string;
+  codeAlong: string;
+  questionA: string;
+  end: string;
 };
 
 const EventPage: React.FC<EventPageProps> = ({
@@ -46,8 +50,10 @@ const EventPage: React.FC<EventPageProps> = ({
         <div className={styles["left_container"]}>
           <div className={styles["time_container"]}>
             <h2>{data.name}</h2>
-            <h3>{data.start_date}</h3>
-            <h3>{data.end_date}</h3>
+            <h4>{data.type}</h4>
+            <h4>{data.address}</h4>
+            <h4>{data.start_date}</h4>
+            <h4>{data.end_date}</h4>
           </div>
         </div>
 
@@ -72,7 +78,10 @@ const EventPage: React.FC<EventPageProps> = ({
 
       <div className={styles["eventSchedule_contaner"]}>
         <h2>Schedule</h2>
-        <div>{data.schedule}</div>
+        <div>{data.start}</div>
+        <div>{data.codeAlong}</div>
+        <div>{data.questionA}</div>
+        <div>{data.end}</div>
       </div>
 
       <div className={styles["eventHost_container"]}>
