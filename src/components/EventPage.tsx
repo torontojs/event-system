@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./EventPage.module.css";
 import Register from "./Register";
 import Schedule from "./Schedule";
+import Attendee from "./Attendee";
 import Host from "./Host";
 import { Link } from "react-router-dom";
 import { useResource } from "react-ketting";
@@ -15,6 +16,7 @@ interface EventPageProps {
   shareEvent: string;
   eventSchedule: string;
   eventHost: string;
+  eventAttendees: string;
 }
 
 type Event = {
@@ -31,6 +33,7 @@ type Event = {
   codeAlong: string;
   questionA: string;
   end: string;
+  eventAttendees: string;
 };
 
 const EventPage: React.FC<EventPageProps> = ({
@@ -52,6 +55,7 @@ const EventPage: React.FC<EventPageProps> = ({
         <div className={styles["left_container"]}>
           <div className={styles["time_container"]}>
             <h2>{data.name}</h2>
+            <Attendee eventAttendees="" />
             <h4>{data.type}</h4>
             <h4>{data.address}</h4>
             <h4>{data.start_date}</h4>
