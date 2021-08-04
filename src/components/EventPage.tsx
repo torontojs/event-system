@@ -65,14 +65,8 @@ const EventPage: React.FC<EventPageProps> = ({
 
         <div className={styles["form_content_container"]}>
           <div className={styles["form_container"]}>
-            <Register />
-          </div>
-          <div className={styles["btn_share"]}>
-            <Link to="/share">
-              <button className={styles["sharevent"]}>
-                Share Event{shareEvent}
-              </button>
-            </Link>
+            <Register 
+            rsvpGit= "" />
           </div>
         </div>
       </div>

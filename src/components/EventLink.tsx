@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./EventPage.module.css";
 import LinkSection from "./LinkSection";
-import { Link } from "react-router-dom";
+import Attendee from "./Attendee";
+import Schedule from "./Schedule";
+import Host from "./Host";
+import { useResource } from "react-ketting";
 
 interface EventLinkProps {
   eventTitle: string;
@@ -12,8 +15,25 @@ interface EventLinkProps {
   shareEvent: string;
   eventSchedule: string;
   eventHost: string;
-  eventChange: string;
+  eventAttendees: string;
 }
+
+type EventLink = {
+  name: string;
+  type: string;
+  address: number;
+  start_date: number;
+  end_date?: boolean;
+  description: string;
+  schedule: string;
+  host_name: string;
+  host_picture: string;
+  start: string;
+  codeAlong: string;
+  questionA: string;
+  end: string;
+  eventAttendees: string;
+};
 
 const EventLink: React.FC<EventLinkProps> = ({
   eventTitle,
@@ -23,16 +43,22 @@ const EventLink: React.FC<EventLinkProps> = ({
   shareEvent,
   eventSchedule,
   eventHost,
-  eventChange,
 }) => {
+  const { loading, error, data } = useResource<EventLink>("/eventlink");
+  if (loading) return <p>Loading...</p>;
+  if (error) return <div className="error">{error.message}</div>;
+
   return (
     <div>
       <div className={styles["navWrapper"]}>
         <div className={styles["left_container"]}>
           <div className={styles["time_container"]}>
-            <h2>{eventTitle}</h2>
-            <h3>{eventStartDate}</h3>
-            <h3>{eventEndDate}</h3>
+            <h2>{data.name}</h2>
+            <Attendee eventAttendees="" />
+            <h4>{data.type}</h4>
+            <h4>{data.address}</h4>
+            <h4>{data.start_date}</h4>
+            <h4>{data.end_date}</h4>
           </div>
         </div>
 
@@ -40,30 +66,20 @@ const EventLink: React.FC<EventLinkProps> = ({
           <div className={styles["form_container"]}>
             <LinkSection eventChange="" />
           </div>
-          <div className={styles["btn_share"]}>
-            <Link to="/shareLink">
-              <button className={styles["sharevent"]}>
-                Share Event{shareEvent}
-              </button>
-            </Link>
-          </div>
         </div>
       </div>
 
       <div className={styles["eventDescription"]}>
         <h2>Description</h2>
-        <div>{eventDescription}</div>
+        <div>{data.description}</div>
       </div>
 
       <div className={styles["eventSchedule_contaner"]}>
         <h2>Schedule</h2>
         <div>{eventSchedule}</div>
       </div>
-
-      <div className={styles["eventHost_container"]}>
-        <h2>Host</h2>
-        <h2>{eventHost}</h2>
-      </div>
+      <Schedule eventSchedule="" />
+      <Host eventHost="" />
     </div>
   );
 };

@@ -2,74 +2,26 @@ import React from "react";
 import styles from "./Register.module.css";
 import { Link } from "react-router-dom";
 
-export default class Register extends React.Component<{}, Istate> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      currentFullName: "",
-      currentEmailAddress: "",
-      fullName: [],
-      emailAddress: [],
-    };
-  }
-  handleSubmit(e: any) {
-    e.preventDefault();
-    this.setState({
-      currentFullName: "",
-      currentEmailAddress: "",
-      fullName: [...this.state.fullName, this.state.currentFullName],
-      emailAddress: [
-        ...this.state.emailAddress,
-        this.state.currentEmailAddress,
-      ],
-    });
-  }
+interface RegisterProps {
+  rsvpGit: string;
+}
 
-  render() {
-    console.log(this.state);
-    return (
-      <div className={styles["form_container"]}>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-          <div>
-            <h3>Attend Online</h3>
-            <label htmlFor="fullName">Full Name</label>
-            <br />
-            <input
-              id="fullName"
-              type="text"
-              value={this.state.currentFullName}
-              onChange={(e) =>
-                this.setState({ currentFullName: e.target.value })
-              }
-            />
-          </div>
-          <br />
-          <div>
-            <label htmlFor="emailAddress">Email Address</label>
-            <br />
-            <input
-              id="emailAddress"
-              type="text"
-              value={this.state.currentEmailAddress}
-              onChange={(e) =>
-                this.setState({ currentEmailAddress: e.target.value })
-              }
-            />
-          </div>
-          <br />
-
-          <Link to="/confirmation">
-            <button className={styles["submit"]}>RSVP{}</button>
+const Register: React.FC<RegisterProps> = ({ rsvpGit }) => {
+  return (
+    <div className={styles["form_container"]}>
+      <form>
+        <div>
+          <h3>Attend Online</h3>
+          <Link to="/eventLink">
+            <button className={styles["submit"]}>
+              RSVP with GitHub{}
+              <a href="https://github.com/oauth/authorize?client id=d5ec0c7b2f9fe82ff33d" />
+            </button>
           </Link>
-        </form>
-      </div>
-    );
-  }
-}
+        </div>
+      </form>
+    </div>
+  );
+};
 
-interface Istate {
-  currentFullName: string;
-  fullName: Array<string>;
-  currentEmailAddress: string;
-  emailAddress: Array<string>;
-}
+export default Register;

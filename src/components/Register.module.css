@@ -1,17 +1,16 @@
 .form_container {
   width: 20rem;
   overflow: hidden;
-  box-shadow: 0 0 15px -5px;
+  font-family: "Roboto", sans-serif;
   height: 13rem;
   padding: 10px;
   margin: 30px;
-  border-radius: 25px;
 }
 .submit {
   padding: 5px;
-  margin-left: 8rem;
   transition: 0.3s;
   animation: ease-in;
+  font-family: "Roboto", sans-serif;
 }
 .submit:hover {
   transform: scale(1.1);

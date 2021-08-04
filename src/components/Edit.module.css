@@ -13,6 +13,7 @@
   margin-top: 4rem;
   margin-right: 5rem;
   margin-left: 3rem;
+  font-family: "Roboto", sans-serif;
 }
 .not:hover {
   transform: scale(1.1);
@@ -21,6 +22,7 @@
 .update {
   transition: 0.3s;
   animation: ease-in;
+  font-family: "Roboto", sans-serif;
 }
 .update:hover {
   transform: scale(1.1);
@@ -29,4 +31,5 @@
 p {
   text-align: center;
   margin-top: 2rem;
+  font-family: "Roboto", sans-serif;
 }

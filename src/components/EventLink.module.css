@@ -1,20 +1,11 @@
 .navWrapper {
+  font-family: "Roboto", sans-serif;
   display: flex;
   width: 100%;
   margin: 24px auto 16px;
   justify-content: space-between;
   box-shadow: 0 6px 0 -5px;
   padding-bottom: 10px;
-}
-
-.btn_share {
-  margin-left: 17rem;
-  transition: 0.3s;
-  animation: ease-in;
-}
-.btn_share:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15 0;
 }
 
 .link_container {
@@ -28,10 +19,12 @@
 }
 .eventDescription {
   margin: 30px;
+  font-family: "Roboto", sans-serif;
 }
 .eventSchedule_contaner {
   margin: 30px;
   width: 15rem;
+  font-family: "Roboto", sans-serif;
 }
 .eventHost_container {
   margin: 30px;
@@ -40,12 +33,9 @@
   border-radius: 25px;
   box-shadow: 0 0 9px -5px;
   padding: 10px;
-}
-
-input {
-  width: 19.5rem;
-  height: 20px;
+  font-family: "Roboto", sans-serif;
 }
 .time_container {
   margin: 30px;
+  font-family: "Roboto", sans-serif;
 }
