@@ -8,7 +8,7 @@ interface IEventProps {
   eventDescription: string;
   eventStartDate: number;
   eventEndDate: number;
-  eventRsvp?: boolean;
+  eventShow?: boolean;
 }
 type EventList = {
   name: string;
@@ -24,7 +24,7 @@ const EventList: React.FC<IEventProps> = ({
   eventDescription,
   eventStartDate,
   eventEndDate,
-  eventRsvp,
+  eventShow,
 }) => {
   const { loading, error, data } = useResource<EventList>("/Eventlist");
   if (loading) return <p>Loading...</p>;
@@ -32,23 +32,24 @@ const EventList: React.FC<IEventProps> = ({
 
   return (
     <div>
+      <div className={styles["header"]}>UPCOMING EVENTS</div>
       <div className={styles["event_container"]}>
         <h2>{data.name}</h2>
+        <h4>
+          {data.start_date}
+          {data.end_date}
+        </h4>
         <h4>{data.type}</h4>
-        <div className={styles["details_container"]}>
-          <h4>
-            {data.start_date}
-            {data.end_date}
-          </h4>
-        </div>
         <div className={styles["block"]}>{data.description}</div>
-        <div className="btn">
+        <div className={styles["link"]}>
           <Link to="/eventPage">
-            <button className={styles["rsvp"]}>RSVP{eventRsvp}</button>
+            <a className={styles["show"]}>Event Details{eventShow}</a>
           </Link>
         </div>
       </div>
-      <button className={styles["more"]}>Load More</button>
+      <div className={styles["btn"]}>
+        <button className={styles["more"]}>Load More</button>
+      </div>
     </div>
   );
 };

@@ -1,30 +1,40 @@
 .event_container {
   width: 40rem;
   overflow: hidden;
-  box-shadow: 0 0 15px -5px;
-  height: 15rem;
   padding: 10px;
   margin: 30px;
-  border-radius: 25px;
+  margin: 24px auto 16px;
+  margin: 24px auto 16px;
+  box-shadow: 0 6px 0 -5px;
+  padding-bottom: 10px;
+  font-family: "Roboto", sans-serif;
+}
+.header {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  padding-top: 35px;
+  letter-spacing: 2px;
+}
+a {
+  text-decoration: none;
+  color: #00aeef;
+  font-family: "Roboto", sans-serif;
+}
+.link {
+  padding-top: 20px;
 }
 
-.details_container {
-  height: 1rem;
-  margin-left: 30.4rem;
-  margin-bottom: 1rem;
-  width: 15rem;
-}
-.rsvp {
-  align-self: right;
-  margin: 20px;
-  margin-left: 550px;
-  transition: 0.3s;
-  animation: ease-in;
-}
-.rsvp:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15 0;
+.show:hover {
+  color: rgb(35, 35, 125);
 }
 .block {
   text-align: justify;
+  font-family: "Roboto", sans-serif;
+}
+.more {
+  font-family: "Roboto", sans-serif;
+}
+.btn {
+  text-align: center;
+  padding-top: 35px;
 }

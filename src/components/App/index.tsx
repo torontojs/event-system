@@ -52,7 +52,7 @@ const App: React.FC = () => {
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
                   }
                   eventEndDate={new Date().getTime()}
-                  eventRsvp={undefined}
+                  eventShow={undefined}
                 />
               </Route>
               <Route path="/share">
