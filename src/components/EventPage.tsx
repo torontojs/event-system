@@ -5,6 +5,7 @@ import Schedule from "./Schedule";
 import Attendee from "./Attendee";
 import Host from "./Host";
 import { Link } from "react-router-dom";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { useResource } from "react-ketting";
 
 interface EventPageProps {
@@ -65,8 +66,7 @@ const EventPage: React.FC<EventPageProps> = ({
 
         <div className={styles["form_content_container"]}>
           <div className={styles["form_container"]}>
-            <Register 
-            rsvpGit= "" />
+            <Register rsvpGit="" />
           </div>
         </div>
       </div>
@@ -77,6 +77,13 @@ const EventPage: React.FC<EventPageProps> = ({
       </div>
       <Schedule eventSchedule="" />
       <Host eventHost="" />
+      <div>
+        <Link to="/eventList">
+          <ArrowBackIcon
+            style={{ color: "rgb(238, 49, 36)", fontSize: "35px" }}
+          />
+        </Link>
+      </div>
     </div>
   );
 };

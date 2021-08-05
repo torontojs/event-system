@@ -4,6 +4,8 @@ import LinkSection from "./LinkSection";
 import Attendee from "./Attendee";
 import Schedule from "./Schedule";
 import Host from "./Host";
+import { Link } from "react-router-dom";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { useResource } from "react-ketting";
 
 interface EventLinkProps {
@@ -75,6 +77,13 @@ const EventLink: React.FC<EventLinkProps> = ({
       </div>
       <Schedule eventSchedule="" />
       <Host eventHost="" />
+      <div>
+        <Link to="/eventList">
+          <ArrowBackIcon
+            style={{ color: "rgb(238, 49, 36)", fontSize: "35px" }}
+          />
+        </Link>
+      </div>
     </div>
   );
 };
