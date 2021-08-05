@@ -73,11 +73,6 @@ const EventLink: React.FC<EventLinkProps> = ({
         <h2>Description</h2>
         <div>{data.description}</div>
       </div>
-
-      <div className={styles["eventSchedule_contaner"]}>
-        <h2>Schedule</h2>
-        <div>{eventSchedule}</div>
-      </div>
       <Schedule eventSchedule="" />
       <Host eventHost="" />
     </div>
