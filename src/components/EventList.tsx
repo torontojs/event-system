@@ -46,7 +46,9 @@ const EventList: React.FC<IEventProps> = ({
             <a className={styles["show"]}>Event Details{eventShow}</a>
           </Link>
         </div>
+        <hr className={styles["hr"]} />
       </div>
+
       <div className={styles["btn"]}>
         <button className={styles["more"]}>Load More</button>
       </div>

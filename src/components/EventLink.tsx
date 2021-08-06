@@ -52,7 +52,7 @@ const EventLink: React.FC<EventLinkProps> = ({
 
   return (
     <div>
-      <div className={styles["navWrapper"]}>
+      <div className={styles["navWrapper_container"]}>
         <div className={styles["left_container"]}>
           <div className={styles["time_container"]}>
             <h2>{data.name}</h2>
@@ -70,10 +70,12 @@ const EventLink: React.FC<EventLinkProps> = ({
           </div>
         </div>
       </div>
-
-      <div className={styles["eventDescription"]}>
-        <h2>Description</h2>
-        <div>{data.description}</div>
+      <hr className={styles["hr"]} />
+      <div className={styles["eventDetails_container"]}>
+        <div className={styles["eventDescription_container"]}>
+          <h2>Description</h2>
+          <div className={styles["des"]}>{data.description}</div>
+        </div>
       </div>
       <Schedule eventSchedule="" />
       <Host eventHost="" />

@@ -10,7 +10,7 @@ const Register: React.FC<RegisterProps> = ({ rsvpGit }) => {
   return (
     <div className={styles["form_container"]}>
       <form>
-        <div>
+        <div className={styles["dates_container"]}>
           <h3>Attend Online</h3>
           <Link to="/eventLink">
             <button className={styles["submit"]}>

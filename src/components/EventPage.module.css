@@ -1,11 +1,16 @@
-.navWrapper {
+.navWrapper_container {
   font-family: "Roboto", sans-serif;
   display: flex;
   width: 100%;
   margin: 24px auto 16px;
   justify-content: space-between;
-  box-shadow: 0 6px 0 -5px;
   padding-bottom: 10px;
+}
+.des {
+  font-size: 16px;
+}
+hr {
+  border-width: 1px;
 }
 
 .link_container {
@@ -17,25 +22,16 @@
 .left_container {
   width: 30rem;
 }
-.eventDescription {
+.eventDescription_container {
   margin: 30px;
-  font-family: "Roboto", sans-serif;
-}
-.eventSchedule_contaner {
-  margin: 30px;
-  width: 15rem;
-  font-family: "Roboto", sans-serif;
-}
-.eventHost_container {
-  margin: 30px;
-  width: 20rem;
-  height: 15rem;
-  border-radius: 25px;
-  box-shadow: 0 0 9px -5px;
-  padding: 10px;
+  text-align: justify;
   font-family: "Roboto", sans-serif;
 }
 .time_container {
   margin: 30px;
   font-family: "Roboto", sans-serif;
+}
+.form_content_container {
+  display: grid;
+  grid-gap: 0.2rem;
 }

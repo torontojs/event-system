@@ -52,7 +52,7 @@ const EventPage: React.FC<EventPageProps> = ({
 
   return (
     <div>
-      <div className={styles["navWrapper"]}>
+      <div className={styles["navWrapper_container"]}>
         <div className={styles["left_container"]}>
           <div className={styles["time_container"]}>
             <h2>{data.name}</h2>
@@ -65,15 +65,15 @@ const EventPage: React.FC<EventPageProps> = ({
         </div>
 
         <div className={styles["form_content_container"]}>
-          <div className={styles["form_container"]}>
-            <Register rsvpGit="" />
-          </div>
+          <Register rsvpGit="" />
         </div>
       </div>
-
-      <div className={styles["eventDescription"]}>
-        <h2>Description</h2>
-        <div>{data.description}</div>
+      <hr className={styles["hr"]} />
+      <div className={styles["eventDetails_container"]}>
+        <div className={styles["eventDescription_container"]}>
+          <h2>Description</h2>
+          <div className={styles["des"]}>{data.description}</div>
+        </div>
       </div>
       <Schedule eventSchedule="" />
       <Host eventHost="" />

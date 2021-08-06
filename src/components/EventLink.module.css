@@ -4,7 +4,6 @@
   width: 100%;
   margin: 24px auto 16px;
   justify-content: space-between;
-  box-shadow: 0 6px 0 -5px;
   padding-bottom: 10px;
 }
 
@@ -17,23 +16,16 @@
 .left_container {
   width: 30rem;
 }
-.eventDescription {
+.eventDescription_container {
   margin: 30px;
+  text-align: justify;
   font-family: "Roboto", sans-serif;
 }
-.eventSchedule_contaner {
-  margin: 30px;
-  width: 15rem;
-  font-family: "Roboto", sans-serif;
+.des {
+  font-size: 16px;
 }
-.eventHost_container {
-  margin: 30px;
-  width: 20rem;
-  height: 15rem;
-  border-radius: 25px;
-  box-shadow: 0 0 9px -5px;
-  padding: 10px;
-  font-family: "Roboto", sans-serif;
+hr {
+  border-width: 1px;
 }
 .time_container {
   margin: 30px;
