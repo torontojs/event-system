@@ -12,7 +12,9 @@ const Edit: React.FC<EditProps> = ({ eventchange, eventUpdate }) => {
     <div>
       <div className={styles["edit_container"]}>
         <div className={styles["info_container"]}>
-          <p>Please Complete your RSVP</p>
+          <div className={styles["h3"]}>
+            <h3>Please Complete your RSVP</h3>
+          </div>
           <p>Your current response: I am going!</p>
           <Link to="/eventPage">
             <button className={styles["not"]}>Not Going{eventchange}</button>
