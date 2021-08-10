@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./EventList.module.css";
 import { Link } from "react-router-dom";
 import { useResource } from "react-ketting";
-import Helmet from "react-helmet";
 
 interface IEventProps {
   eventTitle: string;
@@ -18,7 +17,6 @@ type EventList = {
   start_date: number;
   end_date?: boolean;
   description: string;
-  helmet: string;
 };
 
 const EventList: React.FC<IEventProps> = ({
@@ -34,9 +32,8 @@ const EventList: React.FC<IEventProps> = ({
 
   return (
     <div>
-      <Helmet htmlAttributes={{ lang: "en" }}>
-        <div className={styles["header"]}>UPCOMING EVENTS</div>
-      </Helmet>
+      <div className={styles["header"]}>UPCOMING EVENTS</div>
+
       <div className={styles["event_container"]}>
         <h2>{data.name}</h2>
         <div className={styles["dates"]}>
