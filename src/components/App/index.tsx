@@ -16,6 +16,28 @@ const App: React.FC = () => {
         <Router>
           <div>
             <Switch>
+              <Route exact path="/">
+                <EventList
+                  eventTitle="Event1"
+                  eventStartDate={new Date().getTime()}
+                  eventDescription={
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                  }
+                  eventEndDate={new Date().getTime()}
+                  eventShow={undefined}
+                />
+              </Route>
+              <Route exact path="/events">
+                <EventList
+                  eventTitle="Event1"
+                  eventStartDate={new Date().getTime()}
+                  eventDescription={
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                  }
+                  eventEndDate={new Date().getTime()}
+                  eventShow={undefined}
+                />
+              </Route>
               <Route exact path="/eventPage">
                 <EventPage
                   eventTitle="Event2"
@@ -31,24 +53,6 @@ const App: React.FC = () => {
               Workshop code-along: 7:00
               Q&A or extended chit chat:8:30
               Event ends:9:00"
-                  eventHost="Host name: Elon Musk, Host image"
-                />
-              </Route>
-              <Route path="/user/signin/callback">
-                <EventPage
-                  eventTitle="Event2"
-                  eventAttendees=""
-                  eventStartDate={new Date().getTime()}
-                  eventDescription={
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-                  }
-                  eventEndDate={new Date().getTime()}
-                  eventRsvp={undefined}
-                  shareEvent=""
-                  eventSchedule="Event start date: 6:30
-            Workshop code-along: 7:00
-            Q&A or extended chit chat:8:30
-            Event ends:9:00"
                   eventHost="Host name: Elon Musk, Host image"
                 />
               </Route>
