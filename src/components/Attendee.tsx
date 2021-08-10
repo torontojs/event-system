@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Host.module.css";
+import styles from "./Attendee.module.css";
 import { useResource } from "react-ketting";
 
 interface AttendeeProps {
@@ -17,7 +17,7 @@ const Attendee: React.FC<AttendeeProps> = ({}) => {
 
   return (
     <div className={styles["eventAttendee_container"]}>
-      <h5 className={styles["total"]}>{data.eventAttendees}</h5>
+      <h3 className={styles["total"]}>{data.eventAttendees}</h3>
     </div>
   );
 };

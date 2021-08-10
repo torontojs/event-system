@@ -20,8 +20,8 @@ const LinkSection: React.FC<LinkSectionProps> = ({
       <form>
         <div className={styles["dates_container"]}>
           {/* event start date and time  */}
-          <h6>eventStartDate</h6>
-          <h6>eventEndDate</h6>
+          <h4>eventStartDate</h4>
+          <h4>eventEndDate</h4>
         </div>
         <h5>Online Event</h5>
         <div className={styles["elink"]}>
