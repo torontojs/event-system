@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Host.module.css";
+import spongebob from "../Images/spongebob.jpeg";
 import { useResource } from "react-ketting";
 
 interface HostProps {
@@ -20,7 +21,11 @@ const Host: React.FC<HostProps> = ({}) => {
     <div className={styles["eventHost_container"]}>
       <h2>Host</h2>
       <h3>{data.host_name}</h3>
-      <div className={styles["pic"]}>{data.host_picture}</div>
+      <div className={styles["pic"]}>
+        {data.host_picture}
+        {/* <img src={require("../Images/spongebob.jpeg").default} alt="" /> */}
+        <img src={spongebob} alt="" />
+      </div>
     </div>
   );
 };
