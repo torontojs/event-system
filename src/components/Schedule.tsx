@@ -8,8 +8,8 @@ interface ScheduleProps {
 
 type Schedule = {
   start: string;
-  codeAlong: string;
-  questionA: string;
+  activity: string;
+  closing: string;
   end: string;
 };
 
@@ -22,8 +22,8 @@ const Schedule: React.FC<ScheduleProps> = ({}) => {
     <div className={styles["eventSchedule_contaner"]}>
       <h2>Schedule</h2>
       <div className={styles["des"]}>{data.start}</div>
-      <div className={styles["des"]}>{data.codeAlong}</div>
-      <div className={styles["des"]}>{data.questionA}</div>
+      <div className={styles["des"]}>{data.activity}</div>
+      <div className={styles["des"]}>{data.closing}</div>
       <div className={styles["des"]}>{data.end}</div>
     </div>
   );

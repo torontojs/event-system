@@ -8,3 +8,4 @@ declare module "*.png" {
 declare module "*.jpeg" {
   export default "" as string;
 }
+declare module "react-github-login";

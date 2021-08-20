@@ -31,6 +31,7 @@ const EventList: React.FC<IEventProps> = ({
   if (error) return <div className="error">{error.message}</div>;
 
   return (
+    // add event Id to enable load more feature
     <div>
       <div className={styles["header"]}>UPCOMING EVENTS</div>
 
