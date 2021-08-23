@@ -11,8 +11,8 @@ interface LinkSectionProps {
 }
 
 type LinkSection = {
-  start_time: number;
-  end_time?: boolean;
+  date: number;
+  info: string;
   eventLink: string;
 };
 
@@ -31,10 +31,10 @@ const LinkSection: React.FC<LinkSectionProps> = ({
       <form>
         <div className={styles["dates_container"]}>
           {/* event start date and time  */}
-          <h4>{data.start_time}</h4>
-          <h4>{data.end_time}</h4>
+          <h4>{data.date}</h4>
+          <h4>{data.info}</h4>
         </div>
-        <h5>Online Event</h5>
+        <h5>Online Event </h5>
         <div className={styles["elink"]}>{data.eventLink}</div>
         <button className={styles["going"]}>I'm Going!</button>
         <br />
