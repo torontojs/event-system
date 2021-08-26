@@ -36,7 +36,6 @@ const LinkSection: React.FC<LinkSectionProps> = ({
         </div>
         <h5>Online Event </h5>
         <div className={styles["elink"]}>{data.eventLink}</div>
-        <button className={styles["going"]}>I'm Going!</button>
         <br />
         <Link to="/Edit">
           <button className={styles["change"]}>

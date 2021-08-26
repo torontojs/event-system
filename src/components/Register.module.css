@@ -11,6 +11,10 @@
   transition: 0.3s;
   animation: ease-in;
   font-family: "Roboto", sans-serif;
+  letter-spacing: 0.5px;
+  color: white;
+  background-color: rgb(8, 8, 8);
+  border-radius: 4px;
 }
 .submit:hover {
   transform: scale(1.1);

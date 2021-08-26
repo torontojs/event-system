@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Register.module.css";
-import { Link } from "react-router-dom";
 import GitHubLogin from "react-github-login";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 interface RegisterProps {
   rsvpGit: string;
@@ -16,7 +16,7 @@ const Register: React.FC<RegisterProps> = ({}) => {
       <form>
         <div className={styles["dates_container"]}>
           <h3>Attend Online</h3>
-          {/* <Link to="/eventLink"> */}
+
           <GitHubLogin
             className={styles["submit"]}
             clientId="d5ec0c7b2f9fe82ff33d"
@@ -25,9 +25,9 @@ const Register: React.FC<RegisterProps> = ({}) => {
             cookiePolicy={"single_host_origin"}
             redirectUri={"http://localhost:9000/eventlink"}
           >
-            RSVP with GitHub{}
+            <GitHubIcon style={{ fontSize: "20px", marginRight: "5px" }} />
+            RSVP with GitHub
           </GitHubLogin>
-          {/* </Link> */}
         </div>
       </form>
     </div>
