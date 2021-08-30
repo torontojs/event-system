@@ -24,8 +24,8 @@ type EventLink = {
   name: string;
   type: string;
   address: number;
-  start_date: number;
-  end_date?: boolean;
+  start_time: number;
+  end_time?: boolean;
   description: string;
   schedule: string;
   host_name: string;
@@ -46,7 +46,7 @@ const EventLink: React.FC<EventLinkProps> = ({
   eventSchedule,
   eventHost,
 }) => {
-  const { loading, error, data } = useResource<EventLink>("/eventlink");
+  const { loading, error, data } = useResource<EventLink>("/eventlink/1");
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 
@@ -59,8 +59,8 @@ const EventLink: React.FC<EventLinkProps> = ({
             <Attendee eventAttendees="" />
             <h4>{data.type}</h4>
             <h4>{data.address}</h4>
-            <h4>{data.start_date}</h4>
-            <h4>{data.end_date}</h4>
+            <h4>{data.start_time}</h4>
+            <h4>{data.end_time}</h4>
           </div>
         </div>
 

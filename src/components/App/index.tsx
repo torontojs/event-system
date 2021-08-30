@@ -56,7 +56,7 @@ const App: React.FC = () => {
                   eventHost="Host name: Elon Musk, Host image"
                 />
               </Route>
-              <Route path="/eventList">
+              <Route exact path="/eventList">
                 <EventList
                   eventTitle="Event1"
                   eventStartDate={new Date().getTime()}
@@ -67,7 +67,7 @@ const App: React.FC = () => {
                   eventShow={undefined}
                 />
               </Route>
-              <Route path="/eventLink">
+              <Route exact path="/eventLink">
                 <EventLink
                   eventTitle="Event2"
                   eventAttendees=""
