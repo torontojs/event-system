@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./EventList.module.css";
 import { Link } from "react-router-dom";
-import { useResource } from "react-ketting";
+import { useCollection } from "react-ketting";
+import EventListItem from "./EventListItem";
+import LoadMore from "./LoadMore";
+import { useState } from "react";
+import { jsonApiStateFactory } from "ketting/dist/state";
 
 interface IEventProps {
   eventTitle: string;
@@ -10,14 +14,6 @@ interface IEventProps {
   eventEndDate: number;
   eventShow?: boolean;
 }
-type EventList = {
-  name: string;
-  type: string;
-  address: number;
-  start_date: number;
-  end_date?: boolean;
-  description: string;
-};
 
 const EventList: React.FC<IEventProps> = ({
   eventTitle,
@@ -26,9 +22,10 @@ const EventList: React.FC<IEventProps> = ({
   eventEndDate,
   eventShow,
 }) => {
-  const { loading, error, data } = useResource<EventList>("/Eventlist");
+  const { loading, error, items } = useCollection<EventListItem>("/event");
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
+  console.log(items);
 
   return (
     // add event Id to enable load more feature
@@ -36,27 +33,14 @@ const EventList: React.FC<IEventProps> = ({
       <div className={styles["header"]}>UPCOMING EVENTS</div>
 
       <div className={styles["event_container"]}>
-        <h2>{data.name}</h2>
-        <div className={styles["dates"]}>
-          <h2>
-            {data.start_date}
-            {data.end_date}
-          </h2>
-          <h3>{data.type}</h3>
-        </div>
-
-        <div className={styles["block"]}>{data.description}</div>
-        <div className={styles["link"]}>
-          <Link to="/eventPage">
-            <a className={styles["show"]}>Event Details{eventShow}</a>
-          </Link>
-        </div>
-        <hr className={styles["hr"]} />
+        {items.map((item, i) => (
+          <EventListItem key={i} resource={item} />
+        ))}
       </div>
 
-      <div className={styles["btn"]}>
+      {/* <div className={styles["btn"]}>
         <button className={styles["more"]}>Load More</button>
-      </div>
+      </div> */}
     </div>
   );
 };
