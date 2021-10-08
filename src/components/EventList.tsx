@@ -3,7 +3,6 @@ import styles from "./EventList.module.css";
 import { Link } from "react-router-dom";
 import { useCollection } from "react-ketting";
 import EventListItem from "./EventListItem";
-import LoadMore from "./LoadMore";
 import { useState } from "react";
 import { jsonApiStateFactory } from "ketting/dist/state";
 
@@ -38,9 +37,6 @@ const EventList: React.FC<IEventProps> = ({
         ))}
       </div>
 
-      {/* <div className={styles["btn"]}>
-        <button className={styles["more"]}>Load More</button>
-      </div> */}
     </div>
   );
 };
