@@ -15,6 +15,7 @@
   color: white;
   background-color: rgb(8, 8, 8);
   border-radius: 4px;
+  font-size: 15px;
 }
 .submit:hover {
   transform: scale(1.1);
