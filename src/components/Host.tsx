@@ -13,7 +13,7 @@ type Host = {
 };
 
 const Host: React.FC<HostProps> = ({}) => {
-  const { loading, error, data } = useResource<Host>("/Host/1");
+  const { loading, error, data } = useResource<Host>("/host/1");
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 

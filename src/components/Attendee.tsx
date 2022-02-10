@@ -11,7 +11,7 @@ type Attendee = {
 };
 
 const Attendee: React.FC<AttendeeProps> = ({}) => {
-  const { loading, error, data } = useResource<Attendee>("/Attendee/1");
+  const { loading, error, data } = useResource<Attendee>("/attendee/1");
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 

@@ -46,7 +46,7 @@ const EventPage: React.FC<EventPageProps> = ({
   eventSchedule,
   eventHost,
 }) => {
-  const { loading, error, data } = useResource<Event>("/event/1");
+  const { loading, error, data } = useResource<Event>("/event");
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 
