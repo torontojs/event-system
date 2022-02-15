@@ -25,8 +25,9 @@ function EventListItem({ resource }: { resource: Resource<EventListItem> }) {
   if (error) return <div className="error">{error.message}</div>;
 
   return (
-    <div>
-      <div className={styles["event_container"]}>
+    <div data-event="cube">
+      <div className={styles["event_container"]} >
+
         <h2>{data.name}</h2>
         <div className={styles["dates"]}>
           <h2>

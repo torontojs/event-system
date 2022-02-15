@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./EventList.module.css";
 import { Link } from "react-router-dom";
 import { useCollection } from "react-ketting";
 import EventListItem from "./EventListItem";
 import jquery = require("jquery");
+import base = require ("airtable");
 // import { useState, useEffect } from "react";
 import { jsonApiStateFactory } from "ketting/dist/state";
 
@@ -29,13 +30,27 @@ const EventList: React.FC<IEventProps> = ({
 
   const $: JQueryStatic = jquery;
   
-  $(function(){
-    $(".event_container").slice(0, 3).show();
+  setTimeout(myGreeting, 1000);
+  function myGreeting(){
+    $('div[data-event="cube"]').hide();
+    $('div[data-event="cube"]').slice(0, 3).show();
     $("#loadMore").on("click", function(e){
       e.preventDefault();
-      $(".event_container:hidden").slice(0, 3).slideDown();
+      $('div[data-event="cube"]:hidden').slice(0, 5).slideDown();
+      if($('div[data-event="cube"]:hidden').length == 0) {
+        $("#loadMore").text("No Events").addClass("noContent");
+      }
+    });
+  }
+
+  $(function(){
+    $('div[data-event="cube"]').hide();
+   $(".event_container").slice(0, 3).show();
+    $("#loadMore").on("click", function(e){
+      e.preventDefault();
+      $(".event_container:hidden").slice(0, 5).slideDown();
       if($(".event_container:hidden").length == 0) {
-         $("#loadMore").fadeOut('slow');
+        $("#loadMore").text("No Events").addClass("noContent");
       }
     });
   });
@@ -44,14 +59,12 @@ const EventList: React.FC<IEventProps> = ({
     // add event Id to enable load more feature
     <div>
       <div className={styles["header"]}>UPCOMING EVENTS</div>
-      <div className={styles["event_container"]}>
+      <div className={styles["event_container_1"]}>
         {items.map((item, i) => (
           <EventListItem key={i} resource={item} />
         ))}
       </div>
-      <div id="loadMore">
-      <a href="#" className={styles["loadMore"]}>Load More</a>
-      </div>
+       <a href="#" id="loadMore">Load More</a>
     </div>
   );
 };

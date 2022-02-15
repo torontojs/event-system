@@ -1,4 +1,4 @@
-.event_container {
+.event_container_1 {
   width: 40rem;
   overflow: hidden;
   padding: 10px;
@@ -36,7 +36,7 @@ a {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
 }
-.loadMore {
+[id=loadMore] {
   width: 100px;
   color: #fff;
   display: block;
@@ -48,9 +48,14 @@ a {
   background-color: #00aeef;
   transition: .3s;
 }
-.loadMore:hover {
+[id=loadMore]:hover {
   color: #00aeef;
   background-color:  #005977;
   border: 1px solid #00aeef;
   text-decoration: none;
+}
+[class=noContent] {
+  color: #000 !important;
+  background-color: transparent !important;
+  pointer-events: none;
 }
