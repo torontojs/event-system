@@ -4,7 +4,7 @@ import LinkSection from "./LinkSection";
 import Attendee from "./Attendee";
 import Schedule from "./Schedule";
 import Host from "./Host";
-import { Link } from "react-router-dom";
+import { Link ,useParams } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { useResource } from "react-ketting";
 
@@ -46,7 +46,8 @@ const EventLink: React.FC<EventLinkProps> = ({
   eventSchedule,
   eventHost,
 }) => {
-  const { loading, error, data } = useResource<EventLink>("/eventlink/1");
+  const {id}: { id: any} = useParams(); 
+  const { loading, error, data } = useResource<EventLink>(`/eventlink/${id}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 

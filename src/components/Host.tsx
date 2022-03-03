@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Host.module.css";
 import spongebob from "../Images/spongebob.jpeg";
+import { useParams } from "react-router-dom";
 import { useResource } from "react-ketting";
 
 interface HostProps {
@@ -12,8 +13,10 @@ type Host = {
   host_picture: string;
 };
 
+
 const Host: React.FC<HostProps> = ({}) => {
-  const { loading, error, data } = useResource<Host>("/host/1");
+  const {id}: { id: any} = useParams(); 
+  const { loading, error, data } = useResource<Host>(`/host/${id}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 
@@ -24,7 +27,7 @@ const Host: React.FC<HostProps> = ({}) => {
       <div className={styles["pic"]}>
         {data.host_picture}
         {/* <img src={require("../Images/spongebob.jpeg").default} alt="" /> */}
-        <img src={spongebob} alt="" />
+        {/* <img src={spongebob} alt="" /> */}
       </div>
     </div>
   );

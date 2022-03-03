@@ -9,6 +9,8 @@ import { Client } from "ketting";
 
 const client = new Client("http://localhost:8500");
 
+
+
 const App: React.FC = () => {
   return (
     <KettingProvider client={client}>
@@ -38,7 +40,7 @@ const App: React.FC = () => {
                   eventShow={undefined}
                 />
               </Route>
-              <Route exact path="/eventPage">
+              <Route path="/event/:id">
                 <EventPage
                   eventTitle="Event2"
                   eventAttendees=""

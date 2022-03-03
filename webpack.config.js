@@ -12,6 +12,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 module.exports = {
   // Our application entry point.
   entry: "./src/index.tsx",
+ 
 
   // These rules define how to deal
   // with files with given extensions.
@@ -64,6 +65,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: '/',
   },
 
   // Use the html plugin.

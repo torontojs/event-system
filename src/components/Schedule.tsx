@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Schedule.module.css";
+import { useParams } from "react-router-dom";
 import { useResource } from "react-ketting";
 
 interface ScheduleProps {
@@ -13,8 +14,10 @@ type Schedule = {
   end: string;
 };
 
+
 const Schedule: React.FC<ScheduleProps> = ({}) => {
-  const { loading, error, data } = useResource<Schedule>("/schedule/1");
+  const {id}: { id: any} = useParams(); 
+  const { loading, error, data } = useResource<Schedule>(`/schedule/${id}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 

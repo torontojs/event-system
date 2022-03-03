@@ -4,7 +4,7 @@ import Register from "./Register";
 import Schedule from "./Schedule";
 import Attendee from "./Attendee";
 import Host from "./Host";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { useResource } from "react-ketting";
 
@@ -46,16 +46,18 @@ const EventPage: React.FC<EventPageProps> = ({
   eventSchedule,
   eventHost,
 }) => {
-  const { loading, error, data } = useResource<Event>("/event");
+  const { loading, error, data } = useResource<Event>(`/events/1`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
+
+  const {id}: { id: any} = useParams(); 
 
   return (
     <div>
       <div className={styles["navWrapper_container"]}>
         <div className={styles["left_container"]}>
           <div className={styles["time_container"]}>
-            <h2>{data.name}</h2>
+            <h2>{data.name}{id}</h2>
             <Attendee eventAttendees="" />
             <h4>{data.type}</h4>
             <h4>{data.address}</h4>
@@ -72,7 +74,7 @@ const EventPage: React.FC<EventPageProps> = ({
       <div className={styles["eventDetails_container"]}>
         <div className={styles["eventDescription_container"]}>
           <h2>Description</h2>
-          <div className={styles["des"]}>{data.description}</div>
+          <div className={styles["des"]}>{eventDescription}</div>
         </div>
       </div>
       <Schedule eventSchedule="" />

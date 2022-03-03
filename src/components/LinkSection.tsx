@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./LinkSection.module.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useResource } from "react-ketting";
 
 interface LinkSectionProps {
@@ -22,7 +22,8 @@ const LinkSection: React.FC<LinkSectionProps> = ({
   eventLink,
   eventChange,
 }) => {
-  const { loading, error, data } = useResource<LinkSection>("/linkSection/1");
+  const {id}: { id: any} = useParams(); 
+  const { loading, error, data } = useResource<LinkSection>(`/linkSection/${id}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 

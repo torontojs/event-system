@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./EventList.module.css";
-import { Link } from "react-router-dom";
+import { Link, useParams  } from "react-router-dom";
 import { useCollection } from "react-ketting";
 import EventListItem from "./EventListItem";
 import jquery = require("jquery");
 import base = require ("airtable");
 // import { useState, useEffect } from "react";
 import { jsonApiStateFactory } from "ketting/dist/state";
+import { Resource } from "ketting";
 
 interface IEventProps {
   eventTitle: string;
@@ -29,7 +30,7 @@ const EventList: React.FC<IEventProps> = ({
   console.log(items);
 
   const $: JQueryStatic = jquery;
-  
+  const {id}: { id: any} = useParams(); 
   setTimeout(myGreeting, 1000);
   function myGreeting(){
     $('div[data-event="cube"]').hide();

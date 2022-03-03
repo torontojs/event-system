@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Attendee.module.css";
+import { useParams } from "react-router-dom";
 import { useResource } from "react-ketting";
 
 interface AttendeeProps {
@@ -11,7 +12,8 @@ type Attendee = {
 };
 
 const Attendee: React.FC<AttendeeProps> = ({}) => {
-  const { loading, error, data } = useResource<Attendee>("/attendee/1");
+  const {id}: { id: any} = useParams(); 
+  const { loading, error, data } = useResource<Attendee>(`/attendee/${id}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 
