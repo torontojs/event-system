@@ -12,11 +12,11 @@ type Attendee = {
 };
 
 const Attendee: React.FC<AttendeeProps> = ({}) => {
-  const {id}: { id: any} = useParams(); 
-  const { loading, error, data } = useResource<Attendee>(`/attendee/${id}`);
+  const { loading, error, data } = useResource<Attendee>("/attendee/reckEuoEQhfYdFH4u");
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
-
+  
+  const {id}: { id: any} = useParams(); 
   return (
     <div className={styles["eventAttendee_container"]}>
       <h3 className={styles["total"]}>{data.eventAttendees}</h3>

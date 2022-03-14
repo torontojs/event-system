@@ -18,11 +18,8 @@ type EventListItem = {
   start_time: number;
   end_time: number;
   description: string;
-};
-
-interface RouteParams {
   id: string;
-}
+};
 
 function EventListItem({ resource }: { resource: Resource<EventListItem> }) {
   const { loading, error, data } = useResource(resource);
@@ -30,22 +27,12 @@ function EventListItem({ resource }: { resource: Resource<EventListItem> }) {
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
   const {id}: { id: any} = useParams(); 
-    //let { id } = useParams<{id:string}>(); 
-  //const params = useParams()
-  const params = useParams<RouteParams>();
-  // console.log(params);
-    //let index = this.props.events.findIndex((event: { id: string; }) => event.id == id);
-    //let event = this.props.events[index];
-    // React.useEffect(()=>{
-    //   fetch(`/event/${id}`)
-    //   .then(setId)
-    // }, id)
-    
+  
   return (
     <div data-event="cube">
       <div className={styles["event_container"]} >
 
-        <h2>{data.name}{id}</h2>
+        <h2>{data.name}</h2>
         <div className={styles["dates"]}>
           <h2>
             {data.start_time}
@@ -56,9 +43,9 @@ function EventListItem({ resource }: { resource: Resource<EventListItem> }) {
 
         <div className={styles["block"]}>{data.description}</div>
         <div className={styles["link"]}>
-         <Link to={`/event/${id}`}>   
+         <Link to={`/event/${data.id}`}>   
             Event Details
-            {console.log(id)}
+            {console.log(data.id)}
         </Link>
         </div>
         <hr className={styles["hr"]} />

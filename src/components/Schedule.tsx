@@ -16,11 +16,12 @@ type Schedule = {
 
 
 const Schedule: React.FC<ScheduleProps> = ({}) => {
-  const {id}: { id: any} = useParams(); 
-  const { loading, error, data } = useResource<Schedule>(`/schedule/${id}`);
+  const { loading, error, data } = useResource<Schedule>("/schedule/reckEuoEQhfYdFH4u");
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 
+  const {id}: { id: any} = useParams(); 
+  
   return (
     <div className={styles["eventSchedule_contaner"]}>
       <h2>Schedule</h2>

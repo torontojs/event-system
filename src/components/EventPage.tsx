@@ -46,7 +46,7 @@ const EventPage: React.FC<EventPageProps> = ({
   eventSchedule,
   eventHost,
 }) => {
-  const { loading, error, data } = useResource<Event>(`/events/1`);
+  const { loading, error, data } = useResource<Event>("/event/reckEuoEQhfYdFH4u");
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 
@@ -74,7 +74,7 @@ const EventPage: React.FC<EventPageProps> = ({
       <div className={styles["eventDetails_container"]}>
         <div className={styles["eventDescription_container"]}>
           <h2>Description</h2>
-          <div className={styles["des"]}>{eventDescription}</div>
+          <div className={styles["des"]}>{data.description}</div>
         </div>
       </div>
       <Schedule eventSchedule="" />
