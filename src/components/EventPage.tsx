@@ -77,7 +77,7 @@ const EventPage: React.FC<EventPageProps> = ({
           </div>
         </div>
         <div className={styles["form_content_container"]}>
-          <Schedule eventSchedule="" />
+          <Schedule eventSchedule={data.schedule} />
         </div>
         <div className={styles["form_content_container"]}>
           <Host eventHost="" />
