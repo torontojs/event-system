@@ -23,7 +23,6 @@ type EventListItem = {
 
 function EventListItem({ resource }: { resource: Resource<EventListItem> }) {
   const { loading, error, data } = useResource(resource);
-  //const props: any = {};
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
   const {id}: { id: any} = useParams(); 
@@ -31,7 +30,6 @@ function EventListItem({ resource }: { resource: Resource<EventListItem> }) {
   return (
     <div data-event="cube">
       <div className={styles["event_container"]} >
-
         <h2>{data.name}</h2>
         <div className={styles["dates"]}>
           <h2>
@@ -45,7 +43,6 @@ function EventListItem({ resource }: { resource: Resource<EventListItem> }) {
         <div className={styles["link"]}>
          <Link to={`/event/${data.id}`}>   
             Event Details
-            {console.log(data.id)}
         </Link>
         </div>
         <hr className={styles["hr"]} />

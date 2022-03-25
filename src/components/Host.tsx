@@ -16,7 +16,7 @@ type Host = {
 
 const Host: React.FC<HostProps> = ({}) => {
   const {id}: { id: any} = useParams(); 
-  const { loading, error, data } = useResource<Host>("/host/reckEuoEQhfYdFH4u");
+  const { loading, error, data } = useResource<Host>(`/host/${id}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 

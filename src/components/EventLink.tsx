@@ -17,7 +17,7 @@ interface EventLinkProps {
   shareEvent: string;
   eventSchedule: string;
   eventHost: string;
-  eventAttendees: string;
+  attendees: string;
 }
 
 type EventLink = {
@@ -34,7 +34,7 @@ type EventLink = {
   codeAlong: string;
   questionA: string;
   end: string;
-  eventAttendees: string;
+  attendees: string;
 };
 
 const EventLink: React.FC<EventLinkProps> = ({
@@ -57,7 +57,7 @@ const EventLink: React.FC<EventLinkProps> = ({
         <div className={styles["left_container"]}>
           <div className={styles["time_container"]}>
             <h2>{data.name}</h2>
-            <Attendee eventAttendees="" />
+            <Attendee attendees="" />
             <h4>{data.type}</h4>
             <h4>{data.address}</h4>
             <h4>{data.start_time}</h4>
@@ -79,7 +79,7 @@ const EventLink: React.FC<EventLinkProps> = ({
         </div>
       </div>
       <Schedule eventSchedule="" />
-      <Host eventHost="" />
+      {/* <Host eventHost="" /> */}
       <div>
         <Link to="/eventList">
           <ArrowBackIcon

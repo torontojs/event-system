@@ -15,17 +15,17 @@ type Schedule = {
 };
 
 
-const Schedule: React.FC<ScheduleProps> = ({}) => {
-  const { loading, error, data } = useResource<Schedule>("/schedule/reckEuoEQhfYdFH4u");
+const Schedule: React.FC<ScheduleProps> = ({}) => { 
+  const {id}: { id: any} = useParams(); 
+  const { loading, error, data } = useResource<Schedule>(`/schedule/${id}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
-
-  const {id}: { id: any} = useParams(); 
-  
+ 
   return (
     <div className={styles["eventSchedule_contaner"]}>
       <h2>Schedule</h2>
       <div className={styles["des"]}>{data.start}</div>
+      {console.log(data.start)}
       <div className={styles["des"]}>{data.activity}</div>
       <div className={styles["des"]}>{data.closing}</div>
       <div className={styles["des"]}>{data.end}</div>

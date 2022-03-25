@@ -17,7 +17,7 @@ interface EventPageProps {
   shareEvent: string;
   eventSchedule: string;
   eventHost: string;
-  eventAttendees: string;
+  attendees: string;
 }
 
 type Event = {
@@ -34,7 +34,7 @@ type Event = {
   codeAlong: string;
   questionA: string;
   end: string;
-  eventAttendees: string;
+  attendees: string;
 };
 
 const EventPage: React.FC<EventPageProps> = ({
@@ -45,48 +45,51 @@ const EventPage: React.FC<EventPageProps> = ({
   shareEvent,
   eventSchedule,
   eventHost,
-}) => {
-  const { loading, error, data } = useResource<Event>("/event/reckEuoEQhfYdFH4u");
+}) => { 
+  const {id}: { id: any} = useParams(); 
+  const { loading, error, data } = useResource<Event>(`/event/${id}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
-
-  const {id}: { id: any} = useParams(); 
 
   return (
     <div>
       <div className={styles["navWrapper_container"]}>
         <div className={styles["left_container"]}>
           <div className={styles["time_container"]}>
-            <h2>{data.name}{id}</h2>
-            <Attendee eventAttendees="" />
+            <h2>{data.name}</h2>
+            <h5>{data.attendees ? data.attendees.length: 0} attending.</h5>
             <h4>{data.type}</h4>
             <h4>{data.address}</h4>
             <h4>{data.start_time}</h4>
             <h4>{data.end_time}</h4>
           </div>
         </div>
-
+        
+            <div className={styles["form_content_container"]}>
+              <Register rsvpGit="" />
+            </div>
+          </div>
+        <hr className={styles["hr"]} />
+        <div className={styles["eventDetails_container"]}>
+          <div className={styles["eventDescription_container"]}>
+            <h2>Description</h2>
+            <div className={styles["des"]}>{data.description}</div>
+          </div>
+        </div>
         <div className={styles["form_content_container"]}>
-          <Register rsvpGit="" />
+          <Schedule eventSchedule="" />
         </div>
-      </div>
-      <hr className={styles["hr"]} />
-      <div className={styles["eventDetails_container"]}>
-        <div className={styles["eventDescription_container"]}>
-          <h2>Description</h2>
-          <div className={styles["des"]}>{data.description}</div>
+        <div className={styles["form_content_container"]}>
+          <Host eventHost="" />
         </div>
-      </div>
-      <Schedule eventSchedule="" />
-      <Host eventHost="" />
-      <div>
-        <Link to="/eventList">
-          <ArrowBackIcon
-            style={{ color: "rgb(238, 49, 36)", fontSize: "35px" }}
-          />
-        </Link>
-      </div>
-    </div>
+        <div> 
+          <Link to="/eventList">
+            <ArrowBackIcon
+              style={{ color: "rgb(238, 49, 36)", fontSize: "35px" }}
+            />
+          </Link>
+        </div>
+     </div>
   );
 };
 export default EventPage;

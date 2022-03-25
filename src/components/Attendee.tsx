@@ -4,22 +4,25 @@ import { useParams } from "react-router-dom";
 import { useResource } from "react-ketting";
 
 interface AttendeeProps {
-  eventAttendees: string;
+  attendees: string;
 }
 
 type Attendee = {
-  eventAttendees: string;
+  attendees: string;
+  id: string;
+  eventId: string;
 };
 
 const Attendee: React.FC<AttendeeProps> = ({}) => {
-  const { loading, error, data } = useResource<Attendee>("/attendee/reckEuoEQhfYdFH4u");
+  const {id}: { id: any} = useParams(); 
+  const { loading, error, data } = useResource<Attendee>(`/attendee/${id}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
-  
-  const {id}: { id: any} = useParams(); 
+
   return (
     <div className={styles["eventAttendee_container"]}>
-      <h3 className={styles["total"]}>{data.eventAttendees}</h3>
+      <h3 className={styles["total"]}>{`${data.attendees}`}{`${data.id}`}</h3>
+      {console.log(data)}
     </div>
   );
 };

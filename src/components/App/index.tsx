@@ -43,7 +43,7 @@ const App: React.FC = () => {
               <Route path="/event/:id">
                 <EventPage
                   eventTitle="Event2"
-                  eventAttendees=""
+                  attendees=""
                   eventStartDate={new Date().getTime()}
                   eventDescription={
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
@@ -72,7 +72,7 @@ const App: React.FC = () => {
               <Route exact path="/eventLink">
                 <EventLink
                   eventTitle="Event2"
-                  eventAttendees=""
+                  attendees=""
                   eventStartDate={new Date().getTime()}
                   eventDescription={
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
