@@ -35,6 +35,7 @@ type Event = {
   questionA: string;
   end: string;
   attendees: string;
+  host:string;
 };
 
 const EventPage: React.FC<EventPageProps> = ({
@@ -57,7 +58,7 @@ const EventPage: React.FC<EventPageProps> = ({
         <div className={styles["left_container"]}>
           <div className={styles["time_container"]}>
             <h2>{data.name}</h2>
-            <h5>{data.attendees ? data.attendees.length: 0} attending.</h5>
+            <h5>{data.attendees ? data.attendees.length: 0} are attending.</h5>
             <h4>{data.type}</h4>
             <h4>{data.address}</h4>
             <h4>{data.start_time}</h4>
@@ -80,7 +81,7 @@ const EventPage: React.FC<EventPageProps> = ({
           <Schedule eventSchedule={data.schedule} />
         </div>
         <div className={styles["form_content_container"]}>
-          <Host eventHost="" />
+          <Host eventHost={data.host} />
         </div>
         <div> 
           <Link to="/eventList">

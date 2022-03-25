@@ -14,9 +14,9 @@ type Host = {
 };
 
 
-const Host: React.FC<HostProps> = ({}) => {
-  const {id}: { id: any} = useParams(); 
-  const { loading, error, data } = useResource<Host>(`/host/${id}`);
+const Host: React.FC<HostProps> = ({eventHost}) => {
+  const {id}: any = eventHost; 
+  const { loading, error, data } = useResource<Host>(`/host/${eventHost}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 
@@ -24,11 +24,11 @@ const Host: React.FC<HostProps> = ({}) => {
     <div className={styles["eventHost_container"]}>
       <h2>Host</h2>
       <h3>{data.host_name}</h3>
-      <div className={styles["pic"]}>
-        {data.host_picture}
-        {/* <img src={require("../Images/spongebob.jpeg").default} alt="" /> */}
+      {data.host_picture && <img className={styles["pic"]} src={data.host_picture[0]} />}
+        {/* {data.host_picture} */}
         {/* <img src={spongebob} alt="" /> */}
-      </div>
+      {/* </img> */}
+      {console.log(data.host_picture)}
     </div>
   );
 };
