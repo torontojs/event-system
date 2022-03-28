@@ -57,7 +57,7 @@ const EventLink: React.FC<EventLinkProps> = ({
         <div className={styles["left_container"]}>
           <div className={styles["time_container"]}>
             <h2>{data.name}</h2>
-            <Attendee attendees="" />
+            <h5>{data.attendees ? data.attendees.length: 0} are attending.</h5>
             <h4>{data.type}</h4>
             <h4>{data.address}</h4>
             <h4>{data.start_time}</h4>
