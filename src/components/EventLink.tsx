@@ -35,6 +35,7 @@ type EventLink = {
   questionA: string;
   end: string;
   attendees: string;
+  host:string;
 };
 
 const EventLink: React.FC<EventLinkProps> = ({
@@ -78,8 +79,12 @@ const EventLink: React.FC<EventLinkProps> = ({
           <div className={styles["des"]}>{data.description}</div>
         </div>
       </div>
-      <Schedule eventSchedule="" />
-      {/* <Host eventHost="" /> */}
+      <div className={styles["form_content_container"]}>
+          <Schedule eventSchedule={data.schedule} />
+        </div>
+        <div className={styles["form_content_container"]}>
+          <Host eventHost={data.host} />
+        </div>
       <div>
         <Link to="/eventList">
           <ArrowBackIcon
