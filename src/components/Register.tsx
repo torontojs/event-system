@@ -26,7 +26,7 @@ const Register: React.FC<RegisterProps> = ({}) => {
     console.log(response.code);
   } 
  
-  const { loading, error, data } = useResource<Register>(`/eventlink/${id}`);
+  const { loading, error, data } = useResource<Register>(`/eventLink/${id}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 
@@ -41,7 +41,7 @@ const Register: React.FC<RegisterProps> = ({}) => {
             buttonText="RSVP with GitHub"
             className={styles["submit"]}
             valid={true}
-            redirectUri= "http://localhost:9000/eventLink/">
+            redirectUri= {`http://localhost:9000/event/${id}`} >
             <GitHubIcon style={{ fontSize: "20px", marginRight: "5px" }} /> 
             RSVP with GitHub
             </GitHubLogin>
