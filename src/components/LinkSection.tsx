@@ -8,12 +8,13 @@ interface LinkSectionProps {
   eventEndDate?: number;
   eventLink?: string;
   eventChange: string;
-}
+ }
 
 type LinkSection = {
   date: number;
   info: string;
   eventLink: string;
+ 
 };
 
 const LinkSection: React.FC<LinkSectionProps> = ({
@@ -21,6 +22,7 @@ const LinkSection: React.FC<LinkSectionProps> = ({
   eventEndDate,
   eventLink,
   eventChange,
+  
 }) => {
   const {id}: { id: any} = useParams(); 
   const { loading, error, data } = useResource<LinkSection>(`/linkSection/${id}`);
