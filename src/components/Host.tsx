@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./Host.module.css";
-import spongebob from "../Images/spongebob.jpeg";
-import { useParams } from "react-router-dom";
 import { useResource } from "react-ketting";
 
 interface HostProps {
@@ -16,7 +14,6 @@ type Host = {
 
 const Host: React.FC<HostProps> = ({eventHost}) => {
   const {id}: any = eventHost; 
-  const url: string = "";
   const { loading, error, data } = useResource<Host>(`/host/${eventHost}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
