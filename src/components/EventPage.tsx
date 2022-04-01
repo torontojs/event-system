@@ -37,6 +37,7 @@ type Event = {
   end: string;
   attendees: string;
   host:string;
+  linkSection: string;
 };
 
 const EventPage: React.FC<EventPageProps> = ({
@@ -49,19 +50,20 @@ const EventPage: React.FC<EventPageProps> = ({
   eventHost,
 }) => { 
   const {id}: { id: any} = useParams(); 
+  
+  const { loading, error, data } = useResource<Event>(`/event/${id}`);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <div className="error">{error.message}</div>;
+
   const params = new URLSearchParams(useLocation().search); 
   const code =  params.get("code");
   let githubButton;
   if (code) {
-    githubButton =  <LinkSection eventChange="" />;
+    githubButton =  <LinkSection link={data.linkSection} />;
   }
   else {
     githubButton = <Register rsvpGit="" />;
   }
-
-  const { loading, error, data } = useResource<Event>(`/event/${id}`);
-  if (loading) return <p>Loading...</p>;
-  if (error) return <div className="error">{error.message}</div>;
 
   return (
     <div>
