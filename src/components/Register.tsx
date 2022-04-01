@@ -26,7 +26,7 @@ const Register: React.FC<RegisterProps> = ({}) => {
     console.log(response.code);
   } 
  
-  const { loading, error, data } = useResource<Register>(`/eventLink/${id}`);
+  const { loading, error, data } = useResource<Register>(`/event/${id}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 
