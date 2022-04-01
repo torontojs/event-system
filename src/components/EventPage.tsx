@@ -4,9 +4,10 @@ import Register from "./Register";
 import Schedule from "./Schedule";
 import Attendee from "./Attendee";
 import Host from "./Host";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { useResource } from "react-ketting";
+import LinkSection from "./LinkSection";
 
 interface EventPageProps {
   eventTitle: string;
@@ -48,6 +49,16 @@ const EventPage: React.FC<EventPageProps> = ({
   eventHost,
 }) => { 
   const {id}: { id: any} = useParams(); 
+  const params = new URLSearchParams(useLocation().search); 
+  const code =  params.get("code");
+  let githubButton;
+  if (code) {
+    githubButton =  <LinkSection eventChange="" />;
+  }
+  else {
+    githubButton = <Register rsvpGit="" />;
+  }
+
   const { loading, error, data } = useResource<Event>(`/event/${id}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
@@ -67,7 +78,7 @@ const EventPage: React.FC<EventPageProps> = ({
         </div>
         
             <div className={styles["form_content_container"]}>
-              <Register rsvpGit="" />
+              {githubButton}
             </div>
           </div>
         <hr className={styles["hr"]} />
