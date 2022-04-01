@@ -1,31 +1,23 @@
 import React from "react";
 import styles from "./LinkSection.module.css";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useResource } from "react-ketting";
 
 interface LinkSectionProps {
-  eventStartDate?: number;
-  eventEndDate?: number;
-  eventLink?: string;
-  eventChange: string;
+  link: any;
  }
 
 type LinkSection = {
   date: number;
   info: string;
   eventLink: string;
- 
+  eventChange?:string;
+  id: string;
 };
 
-const LinkSection: React.FC<LinkSectionProps> = ({
-  eventStartDate,
-  eventEndDate,
-  eventLink,
-  eventChange,
-  
-}) => {
-  const {id}: { id: any} = useParams(); 
-  const { loading, error, data } = useResource<LinkSection>(`/linkSection/${id}`);
+const LinkSection: React.FC<LinkSectionProps> = ({link}) => {
+  const {id}: any = link; 
+  const { loading, error, data } = useResource<LinkSection>(`/linkSection/${link}`);
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 
@@ -42,7 +34,7 @@ const LinkSection: React.FC<LinkSectionProps> = ({
         <br />
         <Link to="/Edit">
           <button className={styles["change"]}>
-            Change your RSVP{eventChange}
+            Change your RSVP 
           </button>
         </Link>
       </form>
