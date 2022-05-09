@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./EventPage.module.css";
 import Register from "./Register";
 import Schedule from "./Schedule";
-import Attendee from "./Attendee";
+// import Attendee from "./Attendee";
 import Host from "./Host";
 import { Link, useLocation, useParams } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
