@@ -5,6 +5,7 @@ import { useResource } from "react-ketting";
 
 interface LinkSectionProps {
   link: any;
+  eventId: any;
  }
 
 type LinkSection = {
@@ -15,7 +16,7 @@ type LinkSection = {
   id: string;
 };
 
-const LinkSection: React.FC<LinkSectionProps> = ({link}) => {
+const LinkSection: React.FC<LinkSectionProps> = ({link, eventId}) => {
   const {id}: any = link; 
   const { loading, error, data } = useResource<LinkSection>(`/linkSection/${link}`);
   if (loading) return <p>Loading...</p>;
@@ -32,7 +33,7 @@ const LinkSection: React.FC<LinkSectionProps> = ({link}) => {
         <h5>Online Event </h5>
         <div className={styles["elink"]}>{data.eventLink}</div>
         <br />
-        <Link to="/Edit">
+        <Link to={`/edit/${eventId}`}>
           <button className={styles["change"]}>
             Change your RSVP 
           </button>

@@ -59,7 +59,7 @@ const EventPage: React.FC<EventPageProps> = ({
   const code =  params.get("code");
   let githubButton;
   if (code) {
-    githubButton =  <LinkSection link={data.linkSection} />;
+    githubButton =  <LinkSection link={data.linkSection} eventId={id} />;
   }
   else {
     githubButton = <Register rsvpGit="" />;
