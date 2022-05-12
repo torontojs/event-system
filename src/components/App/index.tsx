@@ -68,7 +68,7 @@ const App: React.FC = () => {
                   eventShow={undefined}
                 />
               </Route>
-              <Route path="/edit">
+              <Route path="/edit/:id">
                 <Edit eventchange="" eventUpdate="" />
               </Route>
             </Switch>
