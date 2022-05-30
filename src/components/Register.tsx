@@ -30,21 +30,30 @@ const Register: React.FC<RegisterProps> = ({}) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <div className="error">{error.message}</div>;
 
+  const GITHUB_CLIENT_ID = "d5ec0c7b2f9fe82ff33d";
+  const gitHubRedirectURL= "http://localhost:9000/events";
+  // const path = `http://localhost:9000/event/${id}`;
+  const path = "/";
+
   return (
     <div className={styles["form_container"]}>
       <form>
         <div className={styles["dates_container"]}>
           <h3>Attend Online</h3>
-          <GitHubLogin clientId="d5ec0c7b2f9fe82ff33d"
+          <a
+           href= {`https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${gitHubRedirectURL}?path=${path}&scope=user:email`} style={{ fontSize: "20px", marginRight: "5px" }}>
+            RSVP with GitHub
+         </a>
+          {/* <GitHubLogin clientId="d5ec0c7b2f9fe82ff33d"
             icon={<GitHubIcon style={{ fontSize: "20px", marginRight: "5px" }} />}
             onSuccess={onSuccessGithub}
             buttonText="RSVP with GitHub"
             className={styles["submit"]}
             valid={true}
-            redirectUri= {`http://localhost:9000/event/${id}`} >
+            redirectUri= {`http://localhost:9000/event/${id}`}> 
             <GitHubIcon style={{ fontSize: "20px", marginRight: "5px" }} /> 
             RSVP with GitHub
-            </GitHubLogin>
+          </GitHubLogin> */}
         </div>
       </form>
     </div>
