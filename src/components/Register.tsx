@@ -40,10 +40,13 @@ const Register: React.FC<RegisterProps> = ({}) => {
       <form>
         <div className={styles["dates_container"]}>
           <h3>Attend Online</h3>
-          <a
-           href= {`https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${gitHubRedirectURL}?path=${path}&scope=user:email`} style={{ fontSize: "20px", marginRight: "5px" }}>
-            RSVP with GitHub
-         </a>
+            <a href= {`https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${gitHubRedirectURL}?path=${path}&scope=user:email`}>
+             <div className={styles["submit"]}>
+               <GitHubIcon style={{ fontSize: "20px", marginRight: "5px", color: "white" }} /> 
+                RSVP with GitHub
+             </div>
+            </a>
+            
           {/* <GitHubLogin clientId="d5ec0c7b2f9fe82ff33d"
             icon={<GitHubIcon style={{ fontSize: "20px", marginRight: "5px" }} />}
             onSuccess={onSuccessGithub}
